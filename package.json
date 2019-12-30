@@ -1,0 +1,80 @@
+{
+  "name": "gatsby-starter-default",
+  "private": true,
+  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "version": "0.1.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "dependencies": {
+    "@contentful/rich-text-react-renderer": "^13.4.0",
+    "@mdx-js/loader": "^1.5.1",
+    "@raae/gatsby-remark-oembed": "^0.1.1",
+    "fslightbox-react": "^1.4.5",
+    "gatsby": "^2.17.11",
+    "gatsby-image": "^2.2.31",
+    "gatsby-plugin-manifest": "^2.2.27",
+    "gatsby-plugin-mdx": "^1.0.57",
+    "gatsby-plugin-offline": "^3.0.19",
+    "gatsby-plugin-react-helmet": "^3.1.14",
+    "gatsby-plugin-sharp": "^2.2.37",
+    "gatsby-plugin-typography": "^2.3.17",
+    "gatsby-remark-autolink-headers": "^2.1.18",
+    "gatsby-remark-copy-linked-files": "^2.1.30",
+    "gatsby-remark-emojis": "^0.3.3",
+    "gatsby-remark-images": "^3.1.33",
+    "gatsby-remark-images-contentful": "^2.1.24",
+    "gatsby-remark-images-grid": "^1.0.2",
+    "gatsby-remark-prismjs": "^3.3.23",
+    "gatsby-remark-responsive-iframe": "^2.2.27",
+    "gatsby-source-contentful": "^2.1.61",
+    "gatsby-source-filesystem": "^2.1.36",
+    "gatsby-transformer-remark": "^2.6.30",
+    "gatsby-transformer-sharp": "^2.3.3",
+    "i": "^0.3.6",
+    "lodash": "^4.17.15",
+    "npm": "^6.13.1",
+    "prismjs": "^1.17.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-headroom": "^3.0.0",
+    "react-helmet": "^5.2.1",
+    "react-spring": "^8.0.27",
+    "react-typography": "^0.16.19",
+    "rebass": "^4.0.7",
+    "smooth-scroll": "^16.1.0",
+    "styled-components": "^4.4.1",
+    "typography": "^0.16.19"
+  },
+  "devDependencies": {
+    "@mdx-js/mdx": "^1.5.1",
+    "babel-eslint": "^10.0.3",
+    "env-cmd": "^10.0.1",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.6.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.16.0",
+    "prettier": "^1.19.1",
+    "stylelint": "^12.0.0",
+    "stylelint-config-prettier": "^6.0.0",
+    "stylelint-config-standard": "^19.0.0"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
+}
