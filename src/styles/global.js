@@ -5,7 +5,8 @@ const GlobalStyles = createGlobalStyle`
   body {
     margin: 0;
     width: 100%;
-    background: rgba(var(--base), 1);
+    /* background: #141129; */
+    background: #1e164ee0;
     color: rgba(var(--secondary), 1);
     font-size: 62.5%;
     line-height: 1;
@@ -21,6 +22,7 @@ const GlobalStyles = createGlobalStyle`
   h5 {
     font-family: "Poppins";
     font-weight: 300;
+    margin-bottom: 0;
   }
 
   h1 {
@@ -48,9 +50,13 @@ const GlobalStyles = createGlobalStyle`
   form,
   textarea,
   input {
-    font-family: 'Roboto';
-    font-size: 2rem;
-    line-height: 25px;
+    font-family: 'Poppins', sans-serif;;
+    font-size: 2.2rem;
+    line-height: 1.7;
+    word-spacing: 0.1rem;
+    letter-spacing: -0.004rem;
+    margin: 0;
+    font-weight: 400;
   }
 
   a {

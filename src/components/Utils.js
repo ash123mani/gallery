@@ -11,7 +11,7 @@ export const Wrapper = styled(Box)`
 
 export const Content = styled(Box)`
   grid-area: Content;
-  height: calc(100vh - 14rem);
+  height: calc(100vh - 14.6rem);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,11 +39,12 @@ export const ContentBottom = styled(Box)`
 
   &.galleries {
     section {
-      padding: 0rem 15rem;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-gap: 2rem;
       width: 100%;
+      height: 100vh;
+      align-items: center;
     }
 
     h4 {
@@ -51,5 +52,26 @@ export const ContentBottom = styled(Box)`
       margin-left: 1rem;
       color: var(--black-100);
     }
+  }
+
+  &.blogPosts {
+    section {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 2rem;
+      grid-row-gap: 5rem;
+      width: 100%;
+    }
+
+    & > section > a > .gatsby-image-wrapper > div:nth-of-type(1) {
+      padding-bottom: 55% !important;
+    }
+  }
+`
+
+export const Article = styled(Box)`
+  max-width: 70%;
+  p {
+    color: var(--black-200);
   }
 `

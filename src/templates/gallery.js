@@ -1,21 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Box } from 'rebass'
 import { graphql } from 'gatsby'
-import styled from 'styled-components'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
-import { Wrapper, Content, ContentBottom } from '../components/Utils'
+import { Wrapper, Content, Article, ContentBottom } from '../components/Utils'
 import FlipppigCard from '../components/animations/FlipppigCard'
 import DownArrow from '../components/DownArrow'
 import GalleryGrid from '../components/GalleryGrid'
-
-const Article = styled(Box)`
-  max-width: 70%;
-  p {
-    color: var(--black-200);
-  }
-`
 
 export const query = graphql`
   query($slug: String!) {

@@ -5,15 +5,18 @@ import styled from 'styled-components'
 import { useSpring, animated as a } from 'react-spring'
 
 const Container = styled(Box)`
-  height: ${props => props.height || '70px'};
+  position: relative;
+  & > h1:first-of-type {
+    position: absolute;
+    bottom: 10px;
+  }
 `
 const CardHeading = styled(a.h1)`
-  position: absolute;
-
   cursor: pointer;
   will-change: transform, opacity;
   background-size: cover;
   color: var(--yellow-500);
+  margin-bottom: 10px;
 `
 
 const FlipppigCard = ({ title, flippedTitle, placeDescription }) => {
