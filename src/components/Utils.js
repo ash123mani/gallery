@@ -45,6 +45,10 @@ export const Content = styled(Box)`
     & section {
       padding: 0rem 2rem;
     }
+
+    &.footer {
+      text-align: center;
+    }
   }
 `
 

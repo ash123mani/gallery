@@ -16,7 +16,6 @@ const InfoBox = styled(Flex)`
   padding: 10px;
   border: 1px solid #ffffffd9;
   align-items: center;
-  /* align-self: stretch; */
   &:hover {
     border: 1px solid #335980d9;
   }

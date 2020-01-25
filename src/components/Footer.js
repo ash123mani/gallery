@@ -7,8 +7,6 @@ import { Flex } from 'rebass'
 
 import { Wrapper, Content } from './Utils'
 
-// import psy from '../static/psy.jpg'
-
 const StyledLink = styled(Link)`
   margin-right: 1.4rem;
   &:last-of-type {
@@ -31,21 +29,11 @@ const FooterContent = styled(Flex)`
   }
 `
 
-// const StyledImage = styled.img`
-//   height: 100px;
-//   width: 100px;
-//   margin-bottom: 0px;
-// `
-
 const Footer = props => {
   console.log('props', props)
   return (
     <Wrapper>
       <Content className="footer">
-        {/* <Flex justifyContent="space-between" width="100%">
-          <div></div>
-          <StyledImage src={psy} />
-        </Flex> */}
         <section id="bottom">
           <h1>Searching for Humanity</h1>
           <FooterContent>
@@ -55,10 +43,6 @@ const Footer = props => {
             <StyledLink to="/contact">Otherside</StyledLink>
           </FooterContent>
         </section>
-        {/* <Flex justifyContent="space-between" width="100%">
-          <StyledImage src={psy} />
-          <div></div>
-        </Flex> */}
       </Content>
     </Wrapper>
   )

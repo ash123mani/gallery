@@ -22,12 +22,6 @@ export const infoArr = [
     subtitle: 'For professional things',
     href: 'https://www.linkedin.com/in/ashutosh-tripathi-508340105/',
   },
-  // {
-  //   img: instagram,
-  //   title: 'Instagram is cool',
-  //   subtitle: 'Checkout my poems',
-  //   href: 'https://www.instagram.com/falak_hue/',
-  // },
   {
     img: quora,
     title: 'Follow me on Quora',
