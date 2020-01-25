@@ -11,7 +11,7 @@ const Title = styled.h3`
   color: var(--yellow-400);
 `
 
-const GalleryGrid = ({ title, parent, images, itemsPerRow: itemsPerRowByBreakpoints }) => {
+const GalleryGrid = ({ title, images, itemsPerRow: itemsPerRowByBreakpoints }) => {
   const aspectRatios = images.map(image => image.fluid.aspectRatio)
   const lightboxImages = images.map(image => image.fluid.src)
   const rowAspectRatioSumsByBreakpoints = itemsPerRowByBreakpoints.map(itemsPerRow =>

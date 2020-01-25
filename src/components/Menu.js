@@ -23,6 +23,26 @@ const Content = styled(Box)`
     font-size: 1.8rem;
     font-weight: 600;
   }
+
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    & {
+      padding: 0rem 4rem;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    & {
+      padding: 0rem 2rem;
+    }
+
+    p > a:last-of-child {
+      display: none;
+    }
+
+    .contact {
+      display: none;
+    }
+  }
 `
 
 const Menu = () => {
@@ -40,7 +60,9 @@ const Menu = () => {
           <p>
             <Link to="/">Gallery</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <Link to="/blog">Blog</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <Link to="/contact">Contact</Link>
+            <Link to="/contact" className="contact">
+              Contact
+            </Link>
           </p>
         </section>
       </Content>

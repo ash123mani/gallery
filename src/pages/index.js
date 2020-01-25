@@ -56,7 +56,7 @@ const IndexPage = ({ data }) => {
         </ContentBottom>
         <>
           <ContentBottom className="blogPosts">
-            <section>
+            <section id="home-blog">
               {contentfulBlogPosts.map(({ node }) => (
                 <ContentList
                   blogPosts

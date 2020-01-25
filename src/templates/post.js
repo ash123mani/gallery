@@ -11,6 +11,18 @@ import options from '../components/blogElements/BlogElements'
 
 const PostSection = styled.section`
   padding: 0 24rem !important;
+
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    & {
+      padding: 0 4rem !important;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    & {
+      padding: 0 2rem !important;
+    }
+  }
 `
 
 const Blogs = ({ data, location }) => {

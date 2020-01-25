@@ -81,7 +81,7 @@ const Gallery = ({ data, location }) => {
         </section>
       </Content>
       <ContentBottom>
-        <section id="bottom">
+        <section id="bottom" className="gallery-section">
           {subGalleries.map((subGallery, index) => (
             <div key={index}>
               {subGallery.__typename === 'ContentfulSubGallery' && (

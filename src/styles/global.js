@@ -26,7 +26,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   h1 {
-    font-size: 5rem;
+    font-size: 4.8rem;
   }
 
   h2 {
@@ -34,7 +34,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   h3 {
-    font-size: 3rem;
+    font-size: 2.4rem;
   }
 
   h4 {
@@ -51,7 +51,7 @@ const GlobalStyles = createGlobalStyle`
   textarea,
   input {
     font-family: 'Poppins', sans-serif;;
-    font-size: 2.2rem;
+    font-size: 2rem;
     line-height: 1.7;
     word-spacing: 0.1rem;
     letter-spacing: -0.004rem;

@@ -5,8 +5,10 @@ import { ThemeProvider } from 'styled-components'
 
 import Styles from './Styles'
 import Menu from './Menu'
+import Footer from './Footer'
 
 import theme from '../styles/theme'
+import { infoArr } from '../constants/contactInfo'
 
 if (typeof window !== 'undefined') {
   // eslint-disable-next-line global-require
@@ -25,6 +27,7 @@ const Layout = ({ children }) => {
           <Menu />
         </Box>
         <Box>{children}</Box>
+        <Footer infoArr={infoArr} />
       </ThemeProvider>
     </React.Fragment>
   )

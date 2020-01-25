@@ -36,6 +36,12 @@ const StyledLink = styled(Link)`
   &:hover:before {
     display: none;
   }
+
+  @media screen and (max-width: 768px) {
+    & {
+      display: none;
+    }
+  }
 `
 
 const ArrowBox = styled(Box)`
