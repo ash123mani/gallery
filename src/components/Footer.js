@@ -35,7 +35,12 @@ const Footer = props => {
     <Wrapper>
       <Content className="footer">
         <section id="bottom">
-          <h1>Searching for Humanity</h1>
+          <h1>
+            Conquer the devils with a little thing called love.
+            <br /> - Bob Marley
+          </h1>
+          <br />
+          <br />
           <FooterContent>
             <StyledLink to="/">Home</StyledLink>
             <StyledLink to="/#bottom">Gallery</StyledLink>

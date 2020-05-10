@@ -1,3 +1,5 @@
+// const siteConfig = require('./src/utils/siteConfig')
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
