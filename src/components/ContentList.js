@@ -8,20 +8,24 @@ import Img from 'gatsby-image'
 const blogPost = props =>
   props.blogPost &&
   css`
-    border: 1px solid var(--black-100);
+    border: 1px solid #3b67c7;
     background: transparent;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-radius: 4px;
 
     & > h1 {
       padding: 16px 12px;
       font-weight: 400;
       font-size: 1.8rem;
-      color: var(--black-200);
       line-height: 2.4rem;
       flex-grow: 1;
+      border-top: 1px solid #3b67c7;
+      border-bottom: 1px solid #3b67c7;
+
+      &:hover {
+        box-shadow: 4px 4px 5px -1px rgba(0, 0, 0, 0.73);
+      }
     }
   `
 
@@ -30,22 +34,22 @@ const StyledLink = styled(Link)`
   &:hover:before {
     display: none;
   }
+  box-shadow: 4px 4px 5px -1px rgba(0, 0, 0, 0.5);
+
   ${blogPost}
 `
 
 const ImageBox = styled(Flex)`
-  border: 1px solid var(--black-100);
+  border: 1px solid #3b67c7;
   border-radius: 2px;
   cursor: pointer;
   flex-direction: column;
-  box-shadow: 4px 4px 5px -1px rgba(72, 50, 50, 0.73);
 
   h4 {
     margin-bottom: 2rem;
   }
 
   &:hover {
-    border-bottom: 1px solid var(--yellow-400);
     transition: all 0.5s;
 
     h4 {
@@ -60,12 +64,10 @@ const ImageBox = styled(Flex)`
 const BlogExtraInfo = styled(Flex)`
   justify-content: space-between;
   bottom: 0;
-  border-top: 1px solid var(--black-100);
-  /* align-items: center; */
 
   p {
     padding: 2px;
-    border-right: 1px solid var(--black-100);
+    /* border-right: 1px solid var(--black-400); */
     position: relative;
     flex-grow: 1;
     text-align: center;
@@ -91,12 +93,12 @@ const ContentList = props => {
           </ImageBox>
         ) : (
           <>
-            <Img fluid={props.image.fluid} />
             <h1>{props.excerpt}</h1>
             <BlogExtraInfo>
               <p>{props.tag}</p>
               <p>{props.publishDate}</p>
             </BlogExtraInfo>
+            {/* <Img fluid={props.image.fluid} /> */}
           </>
         )}
       </StyledLink>

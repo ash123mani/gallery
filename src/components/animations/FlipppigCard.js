@@ -6,6 +6,8 @@ import { useSpring, animated as a } from 'react-spring'
 
 const Container = styled(Box)`
   position: relative;
+  width: 100%;
+  max-width: 75%;
   & > h1:first-of-type {
     position: absolute;
     bottom: 10px;
@@ -17,6 +19,10 @@ const CardHeading = styled(a.h1)`
   background-size: cover;
   color: var(--yellow-500);
   margin-bottom: 10px;
+  margin-right: 300px;
+  border: 1px solid #3b67c7;
+  padding: 8px;
+  width: 100%;
 `
 
 const FlipppigCard = ({ title, flippedTitle, placeDescription }) => {

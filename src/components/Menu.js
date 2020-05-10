@@ -58,9 +58,15 @@ const Menu = () => {
         <section>
           <Logo />
           <p>
-            <Link to="/">Gallery</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <Link to="/blog">Blog</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <Link to="/contact" className="contact">
+            <Link to="/#bottom" activeStyle={{ color: '#fdd568' }}>
+              Gallery
+            </Link>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <Link to="/blog" activeStyle={{ color: '#fdd568' }}>
+              Blog
+            </Link>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <Link to="/contact" className="contact" activeStyle={{ color: '#fdd568' }}>
               Contact
             </Link>
           </p>

@@ -7,6 +7,9 @@ import { Wrapper, Content, Article, ContentBottom } from '../components/Utils'
 import FlipppigCard from '../components/animations/FlipppigCard'
 import DownArrow from '../components/DownArrow'
 import ContentList from '../components/ContentList'
+import SEO from '../components/SEO'
+
+import shareImage from '../static/shareImage.jpeg'
 
 const IndexPage = ({ data }) => {
   const home = data.contentfulHome
@@ -31,14 +34,16 @@ const IndexPage = ({ data }) => {
 
   return (
     <>
+      <SEO image={shareImage} />
       <Wrapper>
-        <Content>
+        <Content id="home-page-banner">
           <section>
             <FlipppigCard title={home.title} flippedTitle={home.flipTitle} />
             <Article>{documentToReactComponents(home.body.json, options)}</Article>
             <DownArrow anchor="/#bottom" />
           </section>
         </Content>
+
         <ContentBottom className="galleries" height="100%">
           <section id="bottom">
             {contentfulGalleries.map(({ node: gallery }) => {

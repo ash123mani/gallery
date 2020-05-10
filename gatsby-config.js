@@ -1,5 +1,3 @@
-const siteConfig = require('./src/utils/siteConfig')
-
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -11,8 +9,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: `static`,
+        path: `${__dirname}/src/static`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -133,8 +131,8 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: siteConfig.spaceId,
-        accessToken: siteConfig.accessToken,
+        spaceId: process.env.spaceId,
+        accessToken: process.env.accessToken,
       },
     },
   ],

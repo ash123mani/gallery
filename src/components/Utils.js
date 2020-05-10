@@ -145,6 +145,8 @@ export const ContentBottom = styled(Box)`
 
 export const Article = styled(Box)`
   max-width: 75%;
+  border: 1px solid #3b67c7;
+  padding: 8px;
   p {
     color: var(--black-200);
   }

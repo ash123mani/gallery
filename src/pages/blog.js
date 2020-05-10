@@ -8,6 +8,10 @@ import FlipppigCard from '../components/animations/FlipppigCard'
 import DownArrow from '../components/DownArrow'
 import BlogsList from '../components/ContentList'
 
+import SEO from '../components/SEO'
+
+import shareImage from '../static/shareImage.jpeg'
+
 const BlogPage = ({ data }) => {
   const blogHome = data.contentfulBlogHome
   const contentfulBlogPosts = data.allContentfulBlogPosts.edges
@@ -29,31 +33,34 @@ const BlogPage = ({ data }) => {
   }
 
   return (
-    <Wrapper>
-      <Content>
-        <section>
-          <FlipppigCard title={blogHome.title} flippedTitle={blogHome.flipTilte} />
-          <Article>{documentToReactComponents(blogHome.body.json, options)}</Article>
-          <DownArrow anchor={location.pathname + '#bottom'} />
-        </section>
-      </Content>
-      <ContentBottom className="blogPosts">
-        <section id="bottom">
-          {contentfulBlogPosts.map(({ node }) => (
-            <BlogsList
-              blogPosts
-              key={node.id}
-              slug={node.slug}
-              title={node.title}
-              excerpt={node.excerpt}
-              publishDate={node.publishedDate}
-              image={node.heroImage}
-              tag={node.tags.split(' ')[0]}
-            />
-          ))}
-        </section>
-      </ContentBottom>
-    </Wrapper>
+    <>
+      <SEO image={shareImage} />
+      <Wrapper>
+        <Content>
+          <section>
+            <FlipppigCard title={blogHome.title} flippedTitle={blogHome.flipTilte} />
+            <Article>{documentToReactComponents(blogHome.body.json, options)}</Article>
+            <DownArrow anchor={location.pathname + '#bottom'} />
+          </section>
+        </Content>
+        <ContentBottom className="blogPosts">
+          <section id="bottom">
+            {contentfulBlogPosts.map(({ node }) => (
+              <BlogsList
+                blogPosts
+                key={node.id}
+                slug={node.slug}
+                title={node.title}
+                excerpt={node.excerpt}
+                publishDate={node.publishedDate}
+                image={node.heroImage}
+                tag={node.tags.split(' ')[0]}
+              />
+            ))}
+          </section>
+        </ContentBottom>
+      </Wrapper>
+    </>
   )
 }
 

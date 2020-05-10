@@ -14,10 +14,16 @@ const Content = styled(Box)`
 
 const InfoBox = styled(Flex)`
   padding: 10px;
-  border: 1px solid #ffffffd9;
+  border: 1px solid #3b67c7;
   align-items: center;
   &:hover {
-    border: 1px solid #335980d9;
+    border: 1px solid #3b67c7;
+  }
+
+  @media screen and (max-width: 360px) {
+    & div p {
+      display: none;
+    }
   }
 `
 
@@ -26,6 +32,12 @@ const StyledIcon = styled.img`
   width: 80px;
   margin-bottom: 0px;
   object-fit: cover;
+
+  @media screen and (max-width: 360px) {
+    & {
+      width: 100%;
+    }
+  }
 `
 
 const StyledLink = styled.a`

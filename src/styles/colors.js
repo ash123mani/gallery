@@ -5,6 +5,7 @@ const ColorStyles = createGlobalStyle`
     --black-100: #737373;
     --black-200: #b7aeae;
     --black-300: #08080B;
+    --black-400: #000;
 
     --base: 8, 8, 11; /* #08080B */
 

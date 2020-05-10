@@ -40,7 +40,7 @@ const Footer = props => {
             <StyledLink to="/">Home</StyledLink>
             <StyledLink to="/#bottom">Gallery</StyledLink>
             <StyledLink to="/#home-blog">Blogs</StyledLink>
-            <StyledLink to="/contact">Otherside</StyledLink>
+            <StyledLink to="/contact">Contacts</StyledLink>
           </FooterContent>
         </section>
       </Content>

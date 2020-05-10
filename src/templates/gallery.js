@@ -4,9 +4,11 @@ import { graphql } from 'gatsby'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 import { Wrapper, Content, Article, ContentBottom } from '../components/Utils'
+import SEO from '../components/SEO'
 import FlipppigCard from '../components/animations/FlipppigCard'
 import DownArrow from '../components/DownArrow'
 import GalleryGrid from '../components/GalleryGrid'
+import shareImage from '../static/shareImage.jpeg'
 
 export const query = graphql`
   query($slug: String!) {
@@ -68,37 +70,40 @@ const Gallery = ({ data, location }) => {
   }
 
   return (
-    <Wrapper>
-      <Content>
-        <section>
-          <FlipppigCard
-            title={gallery.title}
-            flippedTitle={gallery.flipTitle}
-            placeDescription={gallery.placeDescription}
-          />
-          <Article>{documentToReactComponents(gallery.body.json, options)}</Article>
-          <DownArrow anchor={`${location.pathname}/#bottom`} />
-        </section>
-      </Content>
-      <ContentBottom>
-        <section id="bottom" className="gallery-section">
-          {subGalleries.map((subGallery, index) => (
-            <div key={index}>
-              {subGallery.__typename === 'ContentfulSubGallery' && (
-                <GalleryGrid
-                  key={subGallery.id}
-                  slug={subGallery.slug}
-                  images={subGallery.images}
-                  title={subGallery.title}
-                  itemsPerRow={[2, 2, 3, 5]}
-                  parent={gallery.title}
-                />
-              )}
-            </div>
-          ))}
-        </section>
-      </ContentBottom>
-    </Wrapper>
+    <>
+      <SEO title={gallery.title} description={gallery.flipTitle} image={shareImage} />
+      <Wrapper>
+        <Content>
+          <section>
+            <FlipppigCard
+              title={gallery.title}
+              flippedTitle={gallery.flipTitle}
+              placeDescription={gallery.placeDescription}
+            />
+            <Article>{documentToReactComponents(gallery.body.json, options)}</Article>
+            <DownArrow anchor={`${location.pathname}/#bottom`} />
+          </section>
+        </Content>
+        <ContentBottom>
+          <section id="bottom" className="gallery-section">
+            {subGalleries.map((subGallery, index) => (
+              <div key={index}>
+                {subGallery.__typename === 'ContentfulSubGallery' && (
+                  <GalleryGrid
+                    key={subGallery.id}
+                    slug={subGallery.slug}
+                    images={subGallery.images}
+                    title={subGallery.title}
+                    itemsPerRow={[2, 2, 3, 5]}
+                    parent={gallery.title}
+                  />
+                )}
+              </div>
+            ))}
+          </section>
+        </ContentBottom>
+      </Wrapper>
+    </>
   )
 }
 

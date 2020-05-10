@@ -5,8 +5,8 @@ const GlobalStyles = createGlobalStyle`
   body {
     margin: 0;
     width: 100%;
-    /* background: #141129; */
-    background: #1e164ee0;
+    background: #212424;
+    ${'' /* background: #1e164ee0; */}
     color: rgba(var(--secondary), 1);
     font-size: 62.5%;
     line-height: 1;
@@ -15,26 +15,29 @@ const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
+  ::selection { background: green; }
+
   h1,
   h2,
   h3,
   h4,
   h5 {
     font-family: "Poppins";
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 0;
+    color: #fff !important;
   }
 
   h1 {
-    font-size: 4.8rem;
+    font-size: 3.8rem;
   }
 
   h2 {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 
   h3 {
-    font-size: 2.4rem;
+    font-size: 2.5rem;
   }
 
   h4 {
@@ -51,12 +54,13 @@ const GlobalStyles = createGlobalStyle`
   textarea,
   input {
     font-family: 'Poppins', sans-serif;;
-    font-size: 2rem;
-    line-height: 1.7;
+    font-size: 2.1rem;
+    line-height: 1.8;
     word-spacing: 0.1rem;
     letter-spacing: -0.004rem;
     margin: 0;
-    font-weight: 400;
+    color: #e1e1e1 !important;
+    ${'' /* font-weight: 400; */}
   }
 
   a {

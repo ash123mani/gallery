@@ -3,6 +3,9 @@ import styled from 'styled-components'
 import { Flex } from 'rebass'
 
 import ContactInfo from '../components/ContactInfo'
+import SEO from '../components/SEO'
+
+import shareImage from '../static/shareImage.jpeg'
 
 import { infoArr } from '../constants/contactInfo'
 
@@ -10,13 +13,22 @@ const Wrapper = styled(Flex)`
   flex-direction: column;
   height: calc(100vh - 151px);
   padding: 0 15rem;
+
+  @media screen and (max-width: 360px) {
+    & {
+      padding: 0 1rem;
+    }
+  }
 `
 
 const Contact = () => {
   return (
-    <Wrapper>
-      <ContactInfo infoArr={infoArr} />
-    </Wrapper>
+    <>
+      <SEO title="CONTACT" image={shareImage} />
+      <Wrapper>
+        <ContactInfo infoArr={infoArr} />
+      </Wrapper>
+    </>
   )
 }
 
