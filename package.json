@@ -1,9 +1,9 @@
 {
   "name": "gatsby-starter-default",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "I am Ashutosh. Web Devloper and Poet based in banglore",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "I am Ashutosh.",
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^13.4.0",
     "@mdx-js/loader": "^1.5.1",
