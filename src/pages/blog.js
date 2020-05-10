@@ -12,7 +12,7 @@ import SEO from '../components/SEO'
 
 import shareImage from '../static/shareImage.jpeg'
 
-const BlogPage = ({ data }) => {
+const BlogPage = ({ data, location }) => {
   const blogHome = data.contentfulBlogHome
   const contentfulBlogPosts = data.allContentfulBlogPosts.edges
 
@@ -99,6 +99,7 @@ export const query = graphql`
 
 BlogPage.propTypes = {
   data: PropTypes.object.isRequired,
+  location: PropTypes.string.isRequired,
 }
 
 export default BlogPage
