@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { css } from 'styled-components'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 import FsLightbox from 'fslightbox-react'
@@ -9,6 +10,15 @@ import { Box } from 'rebass'
 const Title = styled.h3`
   padding: 3rem 1rem;
   color: var(--yellow-400);
+`
+
+const imageBoxStyles = css`
+  display: inline-block;
+  vertical-align: middle;
+  width: auto;
+  padding-bottom: 1rem;
+  padding-left: 0.5rem;
+  cursor: pointer;
 `
 
 const GalleryGrid = ({ title, images, itemsPerRow: itemsPerRowByBreakpoints }) => {
@@ -29,41 +39,19 @@ const GalleryGrid = ({ title, images, itemsPerRow: itemsPerRowByBreakpoints }) =
   return (
     <Box>
       <Title key={title}>{title}</Title>
-      {images.map((image, i) => (
-        <Box
-          onClick={() => openLightbox(i)}
-          key={image.id}
-          width={rowAspectRatioSumsByBreakpoints.map((rowAspectRatioSums, j) => {
-            const rowIndex = Math.floor(i / itemsPerRowByBreakpoints[j])
-            const rowAspectRatioSum = rowAspectRatioSums[rowIndex]
-            return `${(image.fluid.aspectRatio / rowAspectRatioSum) * 100}%`
-          })}
-          css={`
-            display: inline-block;
-            vertical-align: middle;
-            width: auto;
-            padding-bottom: 1rem;
-            padding-left: 0.5rem;
-            cursor: pointer;
-          `}
-        >
-          <Img
-            onClick={() => openLightbox(i)}
-            fluid={image.thumbnail}
-            title={image.title}
-            width={rowAspectRatioSumsByBreakpoints.map((rowAspectRatioSums, j) => {
-              const rowIndex = Math.floor(i / itemsPerRowByBreakpoints[j])
-              const rowAspectRatioSum = rowAspectRatioSums[rowIndex]
-              return `${(image.fluid.aspectRatio / rowAspectRatioSum) * 100}%`
-            })}
-            css={`
-              display: inline-block;
-              vertical-align: middle;
-              width: auto;
-            `}
-          />
-        </Box>
-      ))}
+      {images.map((image, i) => {
+        const widthArr = rowAspectRatioSumsByBreakpoints.map((rowAspectRatioSums, j) => {
+          const rowIndex = Math.floor(i / itemsPerRowByBreakpoints[j])
+          const rowAspectRatioSum = rowAspectRatioSums[rowIndex]
+          return `${(image.fluid.aspectRatio / rowAspectRatioSum) * 100}%`
+        })
+
+        return (
+          <Box onClick={() => openLightbox(i)} key={image.id} width={widthArr} css={imageBoxStyles}>
+            <Img onClick={() => openLightbox(i)} fluid={image.thumbnail} title={image.title} />
+          </Box>
+        )
+      })}
       <FsLightbox
         toggler={toggler}
         sources={lightboxImages}

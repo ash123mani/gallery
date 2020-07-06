@@ -30,7 +30,6 @@ const FooterContent = styled(Flex)`
 `
 
 const Footer = props => {
-  console.log('props', props)
   return (
     <Wrapper>
       <Content className="footer">
