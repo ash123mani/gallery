@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledImage = styled.img`
-  border: 1px solid #3b67c7;
+  border: 1px solid var(--border);
 `
 
 const Image = node => {

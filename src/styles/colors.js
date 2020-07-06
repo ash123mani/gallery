@@ -22,6 +22,8 @@ const ColorStyles = createGlobalStyle`
   --yellow-700: #976f02;
   --yellow-800: #654a01;
   --yellow-900: #322501;
+
+  --border: #fff;
   }
 `
 

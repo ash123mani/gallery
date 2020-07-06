@@ -5,8 +5,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     margin: 0;
     width: 100%;
-    background: #212424;
-    ${'' /* background: #1e164ee0; */}
+    background: #073535;
     color: rgba(var(--secondary), 1);
     font-size: 62.5%;
     line-height: 1;
@@ -97,6 +96,34 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
+  @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+    
+      h2 {
+        font-size: 2rem;
+      }
+    
+      h3 {
+        font-size: 1.5rem;
+      }
+    
+      h4 {
+        font-size: 1.5rem;
+      }
+
+      p,
+      i,
+      a,
+      ul,
+      li,
+      form,
+      textarea,
+      input {
+        font-size: 1.5rem;
+      }
+  }
 `
 
 export default GlobalStyles

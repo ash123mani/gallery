@@ -20,7 +20,7 @@ const CardHeading = styled(a.h1)`
   color: var(--yellow-500);
   margin-bottom: 10px;
   margin-right: 300px;
-  border: 1px solid #3b67c7;
+  border: 1px solid var(--border);
   padding: 8px;
   width: 100%;
 `

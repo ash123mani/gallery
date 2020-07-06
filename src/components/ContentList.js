@@ -8,7 +8,7 @@ import Img from 'gatsby-image'
 const blogPost = props =>
   props.blogPost &&
   css`
-    border: 1px solid #3b67c7;
+    border: 1px solid var(--border);
     background: transparent;
     display: flex;
     flex-direction: column;
@@ -20,8 +20,8 @@ const blogPost = props =>
       font-size: 1.8rem;
       line-height: 2.4rem;
       flex-grow: 1;
-      border-top: 1px solid #3b67c7;
-      border-bottom: 1px solid #3b67c7;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
 
       &:hover {
         box-shadow: 4px 4px 5px -1px rgba(0, 0, 0, 0.73);
@@ -40,7 +40,7 @@ const StyledLink = styled(Link)`
 `
 
 const ImageBox = styled(Flex)`
-  border: 1px solid #3b67c7;
+  border: 1px solid var(--border);
   border-radius: 2px;
   cursor: pointer;
   flex-direction: column;
@@ -67,7 +67,6 @@ const BlogExtraInfo = styled(Flex)`
 
   p {
     padding: 2px;
-    /* border-right: 1px solid var(--black-400); */
     position: relative;
     flex-grow: 1;
     text-align: center;
@@ -93,7 +92,7 @@ const ContentList = props => {
           </ImageBox>
         ) : (
           <>
-            <h1>{props.excerpt}</h1>
+            <h1>{props.title}</h1>
             <BlogExtraInfo>
               <p>{props.tag}</p>
               <p>{props.publishDate}</p>

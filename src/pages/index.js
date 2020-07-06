@@ -67,7 +67,7 @@ const IndexPage = ({ data }) => {
                   blogPosts
                   key={node.id}
                   slug={node.slug}
-                  title={node.title}
+                  title={node.homepage}
                   excerpt={node.excerpt}
                   publishDate={node.publishedDate}
                   image={node.heroImage}
@@ -117,6 +117,7 @@ export const query = graphql`
         node {
           id
           slug
+          homepage
           body {
             json
           }

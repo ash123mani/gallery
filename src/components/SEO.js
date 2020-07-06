@@ -2,11 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-const defaultTitle = 'I AM ASHUTOSH'
+import defaultImage from '../static/defaultImage.png'
+const defaultTitle = 'I am Ashutosh. Web Developer and Poet based in Bangalore.'
 
 const SEO = props => (
   <Helmet>
-    <title>{`${props.title} - ${defaultTitle}`}</title>
+    <title>{`${props.title} - ${props.description}`}</title>
     <meta name="description" content={props.description} />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
@@ -14,14 +15,18 @@ const SEO = props => (
     <meta property="og:title" content={`${props.title} - ${defaultTitle}`} />
     <meta property="og:description" content={props.description} />
     {typeof window !== `undefined` && <meta property="og:url" content={location.href} />}
-    {props.image ? <meta property="og:image" content={props.image} /> : null}
-    {/* {props.image ? <meta property="og:image:width" content={props.image.ogimg.width} /> : null}
-    {props.image ? <meta property="og:image:height" content={props.image.ogimg.height} /> : null} */}
-    <meta name="twitter:card" content="summary_large_image" />
+    {props.image && props.image.ogimg ? <meta property="og:image" content={props.image} /> : null}
+    {props.image && props.image.ogimg ? (
+      <meta property="og:image:width" content={props.image.ogimg.width} />
+    ) : null}
+    {props.image && props.image.ogimg ? (
+      <meta property="og:image:height" content={props.image.ogimg.height} />
+    ) : null}
+    {/* <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:creator" content="@iammatthias" />
     <meta name="twitter:title" content={`${props.title} - ${defaultTitle}`} />
-    <meta name="twitter:description" content={props.description} />
-    {props.image ? <meta name="twitter:image" content={props.image} /> : null}
+    <meta name="twitter:description" content={props.description} /> */}
+    {/* {props.image ? <meta name="twitter:image" content={props.image} /> : null} */}
   </Helmet>
 )
 
@@ -32,8 +37,8 @@ SEO.propTypes = {
 }
 
 SEO.defaultProps = {
-  title: 'I AM ASHUTOSH',
-  image: '',
+  title: 'I am Ashutosh',
+  image: defaultImage,
   description: 'Web Developer and Poet based in Bangalore.',
 }
 

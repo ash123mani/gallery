@@ -12,18 +12,20 @@ import options from '../components/blogElements/BlogElements'
 
 const PostSection = styled.section`
   padding: 5rem 20rem !important;
-  border: 2px dotted #3b67c7;
+  border: 2px dotted var(--border);
   max-width: 90%;
 
   @media screen and (min-width: 768px) and (max-width: 1024px) {
     & {
       padding: 0 4rem !important;
+      max-width: 98%;
     }
   }
 
   @media screen and (max-width: 768px) {
     & {
-      padding: 0 2rem !important;
+      padding: 0 1rem !important;
+      max-width: 98%;
     }
   }
 `

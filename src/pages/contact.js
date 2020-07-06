@@ -14,9 +14,10 @@ const Wrapper = styled(Flex)`
   height: calc(100vh - 151px);
   padding: 0 15rem;
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 768px) {
     & {
-      padding: 0 1rem;
+      height: calc(100vh - 110px);
+      padding: 0 2rem;
     }
   }
 `

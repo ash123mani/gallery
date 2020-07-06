@@ -10,20 +10,22 @@ const Content = styled(Box)`
   width: 100%;
   align-items: center;
   padding-top: 10rem;
+
+  @media screen and (max-width: 870px) {
+    & {
+      grid-template-columns: repeat(1, 1fr);
+      padding-top: 2rem;
+      grid-gap: 2rem;
+    }
+  }
 `
 
 const InfoBox = styled(Flex)`
   padding: 10px;
-  border: 1px solid #3b67c7;
+  border: 1px solid var(--border);
   align-items: center;
   &:hover {
-    border: 1px solid #3b67c7;
-  }
-
-  @media screen and (max-width: 360px) {
-    & div p {
-      display: none;
-    }
+    border: 1px solid var(--border);
   }
 `
 
