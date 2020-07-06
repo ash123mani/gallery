@@ -5,8 +5,8 @@ import GlobalStyles from '../styles/global'
 const Styles = () => {
   return (
     <React.Fragment>
-      <ColorStyle />
       <GlobalStyles />
+      <ColorStyle />
     </React.Fragment>
   )
 }
