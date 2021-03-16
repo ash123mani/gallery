@@ -1,59 +1,90 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { Link } from 'gatsby'
+import { Box, Flex } from 'rebass'
 
-import { Flex } from 'rebass'
+import Navigator from '../shared/Navigator'
 
-import { Wrapper, Content } from './Utils'
+const Conatiner = styled.section`
+  font-size: 1.8rem;
+  background-color: black;
+  padding: 10rem 15rem;
 
-const StyledLink = styled(Link)`
-  margin-right: 1.4rem;
-  &:last-of-type {
-    margin-right: 0px;
+  & .link {
+    background-color: #2d28288a;
+    color: #ffffffb3;
   }
-  @media screen and (max-width: 768px) {
-    &:first-child {
-      margin-top: 3rem;
-    }
-  }
-`
 
-const FooterContent = styled(Flex)`
-  @media screen and (max-width: 768px) {
-    & {
-      flex-direction: column;
-      align-items: center;
-      margin-top: 3rem;
-    }
+  & .link__active {
+    color: #ffffff8a !important;
+    background-color: #6f6f6f4a !important;
   }
 `
 
-const Footer = props => {
+const Speech = styled.p`
+  color: #ffffffb3;
+  width: 80%;
+
+  & .span {
+    color: white;
+    padding: 4px 0px;
+    font-style: italic;
+  }
+`
+
+const ActName = styled.p`
+  /* font-style: italic; */
+  padding: 8px 0px;
+  color: #a09b9b94;
+`
+
+const ActLink = styled.a`
+  padding: 8px 0px;
+  color: #a09b9b94;
+`
+
+const NavigationContainer = styled(Box)`
+  margin-bottom: 4rem !important;
+`
+
+const ActInfoContainer = styled(Flex)`
+  justify-content: space-between;
+  width: 80%;
+`
+
+const Footer = () => {
   return (
-    <Wrapper>
-      <Content className="footer">
-        <section id="bottom">
-          <h1>
-            Conquer the devils with a little thing called love.
-            <br /> - Bob Marley
-          </h1>
-          <br />
-          <br />
-          <FooterContent>
-            <StyledLink to="/">Home</StyledLink>
-            <StyledLink to="/#bottom">Gallery</StyledLink>
-            <StyledLink to="/#home-blog">Blogs</StyledLink>
-            <StyledLink to="/contact">Contacts</StyledLink>
-          </FooterContent>
-        </section>
-      </Content>
-    </Wrapper>
-  )
-}
+    <Conatiner id="bottom">
+      <NavigationContainer>
+        <Navigator to="/">Falak</Navigator>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <Navigator to="/#bottom">Gallery</Navigator>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <Navigator to="/blog">Blog</Navigator>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <Navigator to="/contact">Contact</Navigator>
+      </NavigationContainer>
 
-Footer.propTypes = {
-  infoArr: PropTypes.array.isRequired,
+      <Speech>
+        I’m sorry, but I don’t want to be an emperor. That’s not my business. I don’t want to rule
+        or conquer anyone. I should like to help everyone - if possible - Jew, Gentile - black man -
+        white. We all want to help one another. Human beings are like that. We want to live by each
+        other’s happiness - not by each other’s misery. We don’t want to hate and despise one
+        another. In this world there is room for everyone. And the good earth is rich and can
+        provide for everyone. The way of life can be free and beautiful, but we have lost the
+        way....
+      </Speech>
+      <ActInfoContainer>
+        <ActName>Excerpt from:- The Final Speech from The Great Dictator</ActName>
+        <ActLink
+          href="https://www.charliechaplin.com/en/articles/29-the-final-speech-from-the-great-dictator-"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Read or Watch full speech.
+        </ActLink>
+      </ActInfoContainer>
+    </Conatiner>
+  )
 }
 
 export default Footer

@@ -13,12 +13,13 @@ const List = styled.ul`
     list-style: none;
 
     p {
-      padding-left: 30px;
+      /* padding-left: 30px; */
     }
   }
 
   > li > p:before {
-    content: '☀️';
+    content: '☀';
+    margin-right: 12px;
   }
 `
 

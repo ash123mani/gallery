@@ -16,9 +16,13 @@ const imageBoxStyles = css`
   display: inline-block;
   vertical-align: middle;
   width: auto;
-  padding-bottom: 1rem;
-  padding-left: 0.5rem;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
   cursor: pointer;
+
+  & .gatsby-image-wrapper {
+    border-radius: 2px;
+  }
 `
 
 const GalleryGrid = ({ title, images, itemsPerRow: itemsPerRowByBreakpoints }) => {

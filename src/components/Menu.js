@@ -1,79 +1,68 @@
 import React from 'react'
-import { Box } from 'rebass'
-import { Link } from 'gatsby'
 import styled from 'styled-components'
 import Headroom from 'react-headroom'
+import { bool } from 'prop-types'
+import { Box } from 'rebass'
 
-import Logo from './Logo'
+import NewLogo from '../shared/NewLogo'
+import Navigator from '../shared/Navigator'
 
-const Content = styled(Box)`
-  grid-area: Content;
+const Container = styled.section`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 0rem 15rem;
+  width: 100%;
+  align-items: center;
+  height: 170px;
+`
 
-  padding: 2rem 15rem;
+const LogoContainer = styled(Box)`
+  position: relative;
 
-  section {
-    display: flex;
-
-    justify-content: space-between;
-    align-items: center;
-    margin: 2rem auto;
-  }
-
-  p > a {
-    font-size: 1.8rem;
-    font-weight: 600;
-  }
-
-  @media screen and (min-width: 768px) and (max-width: 1024px) {
-    & {
-      padding: 0rem 4rem;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    & {
-      padding: 0rem 2rem;
-    }
-
-    p > a:last-of-child {
-      display: none;
-    }
-
-    .contact {
-      display: none;
-    }
+  &:after {
+    content: '';
+    position: absolute;
+    height: 170px;
+    width: 1px;
+    background: #d3d1d1;
+    left: 0px;
+    top: -60px;
   }
 `
 
-const Menu = () => {
+const Menu = ({ hideLinks }) => {
   return (
     <Headroom
       style={{
-        position: 'fixed',
         zIndex: '300',
         transition: 'all .5s ease-in-out',
       }}
     >
-      <Content>
-        <section>
-          <Logo />
+      <Container>
+        <LogoContainer>
+          <NewLogo />
+        </LogoContainer>
+        {!hideLinks && (
           <p>
-            <Link to="/#bottom" activeStyle={{ color: '#fdd568' }}>
-              Gallery
-            </Link>
+            {/* <Navigator to="/gallery">Gallery</Navigator> */}
+            {/* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */}
+            <Navigator to="/blog">Blog</Navigator>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <Link to="/blog" activeStyle={{ color: '#fdd568' }}>
-              Blog
-            </Link>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <Link to="/contact" className="contact" activeStyle={{ color: '#fdd568' }}>
-              Contact
-            </Link>
+            <Navigator to="/contact">Contact</Navigator>
           </p>
-        </section>
-      </Content>
+        )}
+      </Container>
     </Headroom>
   )
+}
+
+Menu.propTypes = {
+  hideLinks: bool,
+}
+
+Menu.defaultProps = {
+  hideLinks: false,
 }
 
 export default Menu

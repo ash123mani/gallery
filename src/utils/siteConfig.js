@@ -1,3 +1,4 @@
-const siteConfig = {}
+const siteConfig = {
+}
 
 module.exports = siteConfig

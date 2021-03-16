@@ -5,13 +5,16 @@ const GlobalStyles = createGlobalStyle`
   body {
     margin: 0;
     width: 100%;
-    background: #073535;
+    height: 100%;
+    /* background: #073535; */
+    font-family: 'Poppins', sans-serif;
     color: rgba(var(--secondary), 1);
     font-size: 62.5%;
     line-height: 1;
     font-variant-ligatures: none;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 
   ::selection { background: green; }
@@ -24,7 +27,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: "Poppins";
     font-weight: 400;
     margin-bottom: 0;
-    color: #fff !important;
+    color: #0000;
   }
 
   h1 {
@@ -46,54 +49,20 @@ const GlobalStyles = createGlobalStyle`
 
   p,
   i,
-  a,
   ul,
   li,
   form,
   textarea,
   input {
-    font-family: 'Poppins', sans-serif;;
-    font-size: 2.1rem;
-    line-height: 1.8;
-    word-spacing: 0.1rem;
-    letter-spacing: -0.004rem;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
-    color: #e1e1e1 !important;
-    ${'' /* font-weight: 400; */}
+    color: #0000;
+    line-height: 1.4;
+    letter-spacing: 0.4px;
   }
 
   a {
     text-decoration: none;
-    font-family: "Poppins";
-    font-weight: 400;
-    color: var(--yellow-500);
-    position: relative;
-
-    &:before {
-      position: absolute;
-      content: '';
-      width: 0%;
-      height: 1px;
-      background: white;
-      bottom: -3px;
-      left: 50%;
-    }
-
-    &:after {
-      position: absolute;
-      content: '';
-      width: 0%;
-      height: 1px;
-      background: white;
-      bottom: -3px;
-      right: 50%;
-    }
-
-    &:hover:before,
-    &:hover:after {
-      width: 50%;
-      transition: width 0.5s;
-    }
   }
 
   @media screen and (max-width: 768px) {
@@ -123,6 +92,8 @@ const GlobalStyles = createGlobalStyle`
       input {
         font-size: 1.5rem;
       }
+
+      
   }
 `
 

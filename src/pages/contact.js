@@ -1,6 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex } from 'rebass'
+import { Box } from 'rebass'
+
+import LandingLayout from '../shared/LandingLayout'
+
+const Wrapper = styled(Box)`
+  /* padding: 0rem 15rem; */
+  height: calc(100vh - 190px);
+  width: 100%;
+`
 
 import ContactInfo from '../components/ContactInfo'
 import SEO from '../components/SEO'
@@ -9,25 +17,18 @@ import shareImage from '../static/shareImage.jpeg'
 
 import { infoArr } from '../constants/contactInfo'
 
-const Wrapper = styled(Flex)`
-  flex-direction: column;
-  height: calc(100vh - 151px);
-  padding: 0 15rem;
-
-  @media screen and (max-width: 768px) {
-    & {
-      height: calc(100vh - 110px);
-      padding: 0 2rem;
-    }
-  }
-`
-
 const Contact = () => {
   return (
     <>
       <SEO title="CONTACT" image={shareImage} />
       <Wrapper>
-        <ContactInfo infoArr={infoArr} />
+        <section>
+          <LandingLayout
+            title="Hi You want to contact me are you mad!!!"
+            body="You Want Body as well"
+            rightContent={() => <ContactInfo infoArr={infoArr} />}
+          />
+        </section>
       </Wrapper>
     </>
   )

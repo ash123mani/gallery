@@ -24,6 +24,11 @@ const ColorStyles = createGlobalStyle`
   --yellow-900: #322501;
 
   --border: #fff;
+
+  --f-dark-black: #000000;
+  --f-dark-white: #ffffff;
+
+  --f-transparent: transparent;
   }
 `
 

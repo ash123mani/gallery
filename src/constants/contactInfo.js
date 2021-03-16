@@ -6,26 +6,30 @@ import eemail from '../static/eemail.png'
 export const infoArr = [
   {
     img: eemail,
-    title: 'Drop me a message',
+    title: 'My Mail',
     subtitle: 'Saying Hi can make us friends',
     href: 'mailto:ashuma2721@gmail.com',
+    hoverColor: '#dc493b',
   },
   {
     img: github,
-    title: 'Github is github',
+    title: 'Github',
     subtitle: 'Checkout my code store room',
     href: 'https://github.com/ash123mani',
+    hoverColor: 'gray',
   },
   {
     img: linkedin,
-    title: 'Connect with on linkedin',
+    title: 'linkedin',
     subtitle: 'For professional things',
     href: 'https://www.linkedin.com/in/ashutosh-tripathi-508340105/',
+    hoverColor: '#0c2b5c',
   },
   {
     img: quora,
-    title: 'Follow me on Quora',
+    title: 'Quora',
     subtitle: 'Have some crazy contents on Quora ',
     href: 'https://www.quora.com/profile/Ashutosh-Mani-Tripathi-1',
+    hoverColor: '#ba2a25',
   },
 ]
