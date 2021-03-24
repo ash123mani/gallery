@@ -32,7 +32,7 @@ const BlogCards = styled(Box)`
   ${isMobile &&
     css`
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    `}
+    `};
 `
 
 const ButtonWrapper = styled(Flex)`
@@ -51,7 +51,7 @@ const ButtonWrapper = styled(Flex)`
     css`
       padding: 2rem;
       flex-wrap: wrap;
-    `}
+    `};
 `
 
 const cuCss = css`
@@ -63,7 +63,7 @@ const RightContentContainer = styled(Flex)`
   ${isMobile &&
     css`
       margin-top: 4rem !important;
-    `}
+    `};
 `
 
 const Title = styled.p`
@@ -71,16 +71,13 @@ const Title = styled.p`
   color: var(--color-primary) !important;
   font-weight: 300;
   padding: 1.6rem !important;
-  /* background-color: #d3d1d161; */
   border-radius: 4px;
   font-weight: 500;
-  /* text-shadow: -1px -1px 2px #0c0c0c69; */
-  /* opacity: 0.5; */
 
   ${isMobile &&
     css`
       padding: 1.6rem 0rem !important;
-    `}
+    `};
 `
 
 const Author = styled.p`
@@ -91,8 +88,6 @@ const Author = styled.p`
   font-weight: 500;
   border-radius: 4px;
   align-self: flex-end;
-  /* text-shadow: -1px -1px 2px #0c0c0c69; */
-  /* opacity: 0.5; */
 `
 
 export { Wrapper, BlogCards, Author, Title, RightContentContainer, cuCss, ButtonWrapper }
