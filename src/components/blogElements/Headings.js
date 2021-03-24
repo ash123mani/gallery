@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 
 const headingStyle = css`
   margin: 2rem 0;
-  color: var(--f-dark-black);
+  color: var(--color-primary);
   font-weight: 400;
   width: fit-content;
   position: relative;

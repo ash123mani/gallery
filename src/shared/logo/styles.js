@@ -1,22 +1,22 @@
-import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Flex } from 'rebass'
 import { Link } from 'gatsby'
+import { isMobile } from 'react-device-detect'
 
 const Container = styled(Flex)`
   height: 50px;
   width: 150px;
-  /* background-color: var(--f-dark-black); */
   justify-content: center;
   align-items: center;
   background-repeat: no-repeat;
   background-size: auto 100%;
   position: relative;
-  border: 1px solid #d3d1d1;
+  border: 1px solid var(--border-color);
   border-left: unset;
+  background-color: var(--color-primary);
 
   &:hover {
-    background-color: var(--f-dark-black);
+    background-color: var(--color-primary);
 
     p {
       color: #fff;
@@ -32,25 +32,25 @@ const Container = styled(Flex)`
     height: 100%;
     background: red;
   }
+
+  ${isMobile &&
+    css`
+      height: 40px;
+      width: 100px;
+    `};
 `
 
 const Falak = styled.p`
   font-size: 2.8rem;
   font-weight: 700;
-  color: #000;
+  color: #fff;
+
+  ${isMobile &&
+    css`
+      font-size: 1.8rem;
+    `};
 `
 
-const StyledLink = styled(Link)`
-`
+const StyledLink = styled(Link)``
 
-function NewLogo() {
-  return (
-    <Container>
-      <StyledLink>
-        <Falak>Falak</Falak>
-      </StyledLink>
-    </Container>
-  )
-}
-
-export default NewLogo
+export { StyledLink, Falak, Container }

@@ -3,7 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Para = styled.p`
-  color: #000;
+  color: var(--color-primary);
   font-size: 1.9rem;
   line-height: 1.5;
   word-spacing: 0.1rem;

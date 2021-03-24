@@ -1,21 +1,12 @@
 import React from 'react'
-import styled from 'styled-components'
-import { Box } from 'rebass'
 
-import LandingLayout from '../shared/LandingLayout'
+import LandingLayout from '../../shared/landing-layout'
+import ContactInfo from '../../components/contact/contact-info'
+import SEO from '../../components/SEO'
+import shareImage from '../../static/shareImage.jpeg'
+import { infoArr } from '../../config/contactInfo'
 
-const Wrapper = styled(Box)`
-  /* padding: 0rem 15rem; */
-  height: calc(100vh - 190px);
-  width: 100%;
-`
-
-import ContactInfo from '../components/ContactInfo'
-import SEO from '../components/SEO'
-
-import shareImage from '../static/shareImage.jpeg'
-
-import { infoArr } from '../constants/contactInfo'
+import { Wrapper } from './syles'
 
 const Contact = () => {
   return (

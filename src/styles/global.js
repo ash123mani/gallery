@@ -8,7 +8,7 @@ const GlobalStyles = createGlobalStyle`
     height: 100%;
     /* background: #073535; */
     font-family: 'Poppins', sans-serif;
-    color: rgba(var(--secondary), 1);
+    color: rgba(var(--color-primary), 1);
     font-size: 62.5%;
     line-height: 1;
     font-variant-ligatures: none;
@@ -39,7 +39,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   h3 {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
   }
 
   h4 {
@@ -65,35 +65,14 @@ const GlobalStyles = createGlobalStyle`
     text-decoration: none;
   }
 
+  img {
+    margin: 0px;
+  }
+
   @media screen and (max-width: 768px) {
-      h1 {
-        font-size: 2.5rem;
+      html {
+        font-size: 50% !important;
       }
-    
-      h2 {
-        font-size: 2rem;
-      }
-    
-      h3 {
-        font-size: 1.5rem;
-      }
-    
-      h4 {
-        font-size: 1.5rem;
-      }
-
-      p,
-      i,
-      a,
-      ul,
-      li,
-      form,
-      textarea,
-      input {
-        font-size: 1.5rem;
-      }
-
-      
   }
 `
 

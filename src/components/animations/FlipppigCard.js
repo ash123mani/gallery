@@ -16,7 +16,7 @@ const CardHeading = styled(a.h1)`
   cursor: pointer;
   will-change: transform, opacity;
   background-size: cover;
-  color: var(--f-dark-black);
+  color: var(--color-primary);
   margin-bottom: 10px;
   width: 100%;
 `

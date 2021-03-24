@@ -4,13 +4,18 @@ import styled from 'styled-components'
 import { Box } from 'rebass'
 import { object } from 'prop-types'
 
-import LandingLayout from '../shared/LandingLayout'
-import BlogCard from '../shared/BlogCard'
+import LandingLayout from '../../shared/landing-layout'
+import BlogCard from '../../shared/blog-cards'
 
 const Wrapper = styled(Box)`
-  /* padding: 0rem 15rem 12rem; */
-  height: calc(100vh - 190px);
+  /* height: calc(100vh - 170px); */
   width: 100%;
+
+  @media only screen and (max-width: 768px) {
+    & {
+      height: 100%;
+    }
+  }
 `
 
 const Gallery = ({ data }) => {

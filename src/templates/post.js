@@ -1,20 +1,29 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Box } from 'rebass'
+import { isMobile } from 'react-device-detect'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 import { Article, Title } from '../components/Utils'
 import SEO from '../components/SEO'
 import options from '../components/blogElements/BlogElements'
-import { Content } from '../components/Layout'
+import { Content } from '../components/Layout/styles'
 
 const Wrapper = styled(Box)`
-  /* padding: 0rem 15rem; */
+  padding: 0 0rem 0rem 8rem;
   height: calc(100vh - 190px);
   width: 100%;
   height: 100%;
+  border-left: 1px solid var(--border-color);
+  padding-top: 10rem;
+
+  ${isMobile &&
+    css`
+      border-left: none !important;
+      padding: 0rem;
+    `};
 
   ${Content} {
     padding-top: 0px;
@@ -25,24 +34,40 @@ const HeadingContainer = styled.section`
   display: flex;
   flex-direction: column;
   max-width: 86%;
-  margin-bottom: 4rem;
-  border-left: 1px solid #6f68684d;
   position: relative;
-  padding: 2rem 4rem;
+
+  ${isMobile &&
+    css`
+      margin: 0rem;
+      max-width: 100%;
+    `};
 `
 
 const Divider = styled(Box)`
   width: 100%;
   height: 1px;
-  background: #6f68684d;
+  background: var(--border-color);
+  margin: 6rem 0rem !important;
+
+  ${isMobile &&
+    css`
+      margin: 4rem 0rem !important;
+    `};
 `
 
 const PostSection = styled.section`
   max-width: 86%;
-  padding: 0rem 4rem;
   margin-top: 5rem;
-  border-left: 1px solid #6f68684d;
-  margin-bottom: 8rem;
+  margin-bottom: 18rem;
+
+  ${isMobile &&
+    css`
+      padding: 0rem;
+      margin: 0rem;
+      max-width: 100%;
+      margin-top: 2rem;
+      margin-bottom: 10rem;
+    `};
 `
 
 const Blogs = ({ data }) => {
@@ -69,7 +94,7 @@ const Blogs = ({ data }) => {
         <PostSection id="bottom" className="post">
           {documentToReactComponents(post.body.json, options)}
         </PostSection>
-        <Divider />
+        {/* <Divider /> */}
       </Wrapper>
     </>
   )

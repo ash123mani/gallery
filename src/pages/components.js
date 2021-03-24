@@ -2,9 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import { Flex } from 'rebass'
 
-import NewLogo from '../shared/NewLogo'
-import Navigator from '../shared/Navigator'
-import BlogCard from '../shared/BlogCard'
+import NewLogo from '../shared/logo'
+import Navigator from '../shared/navigator'
+import BlogCard from '../shared/blog-cards'
 
 const Wrapper = styled(Flex)`
   display: flex;

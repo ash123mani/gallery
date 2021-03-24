@@ -1,35 +1,11 @@
 import React from 'react'
-import styled from 'styled-components'
 import Headroom from 'react-headroom'
 import { bool } from 'prop-types'
-import { Box } from 'rebass'
 
-import NewLogo from '../shared/NewLogo'
-import Navigator from '../shared/Navigator'
+import NewLogo from '../../shared/logo'
+import Navigator from '../../shared/navigator'
 
-const Container = styled.section`
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  padding: 0rem 15rem;
-  width: 100%;
-  align-items: center;
-  height: 170px;
-`
-
-const LogoContainer = styled(Box)`
-  position: relative;
-
-  &:after {
-    content: '';
-    position: absolute;
-    height: 170px;
-    width: 1px;
-    background: #d3d1d1;
-    left: 0px;
-    top: -60px;
-  }
-`
+import { Container, LogoContainer } from './styles'
 
 const Menu = ({ hideLinks }) => {
   return (
@@ -37,6 +13,7 @@ const Menu = ({ hideLinks }) => {
       style={{
         zIndex: '300',
         transition: 'all .5s ease-in-out',
+        // position: 'fixed',
       }}
     >
       <Container>

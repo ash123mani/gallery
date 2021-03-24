@@ -2,10 +2,12 @@ import { createGlobalStyle } from 'styled-components'
 
 const ColorStyles = createGlobalStyle`
   :root {
-    --black-100: #737373;
-    --black-200: #b7aeae;
-    --black-300: #08080B;
-    --black-400: #000;
+    --color-primary: #000;
+
+    --border-color: rgb(211 209 209);
+    
+    --button-background: #000;
+    --link-active-background: #6f6f6f4a;
 
     --base: 8, 8, 11; /* #08080B */
 
@@ -25,7 +27,7 @@ const ColorStyles = createGlobalStyle`
 
   --border: #fff;
 
-  --f-dark-black: #000000;
+  --color-primary: #000000;
   --f-dark-white: #ffffff;
 
   --f-transparent: transparent;

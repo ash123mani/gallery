@@ -1,29 +1,11 @@
 import React, { useState } from 'react'
-import { css } from 'styled-components'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 import FsLightbox from 'fslightbox-react'
-import styled from 'styled-components'
 import { chunk, sum } from 'lodash'
 import { Box } from 'rebass'
 
-const Title = styled.h3`
-  padding: 3rem 1rem;
-  color: var(--yellow-400);
-`
-
-const imageBoxStyles = css`
-  display: inline-block;
-  vertical-align: middle;
-  width: auto;
-  padding-bottom: 2rem;
-  padding-left: 2rem;
-  cursor: pointer;
-
-  & .gatsby-image-wrapper {
-    border-radius: 2px;
-  }
-`
+import { Title, imageBoxStyles } from './styles'
 
 const GalleryGrid = ({ title, images, itemsPerRow: itemsPerRowByBreakpoints }) => {
   const aspectRatios = images.map(image => image.fluid.aspectRatio)

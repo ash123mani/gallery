@@ -1,43 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Flex } from 'rebass'
-import styled, { css } from 'styled-components'
 import { object, string, bool } from 'prop-types'
 
-import Navigator from '../shared/Navigator'
+import { Article, Title } from '../../../components/Utils'
 
-import { Article, Title, fadeInUp } from '../components/Utils'
+import Navigator from '../../navigator'
 
-const Content = styled(Flex)`
-  width: 50%;
-  padding-right: 40px;
-  flex-direction: column;
-  padding-left: 20px;
-  border-left: 1px solid #d3d1d1;
-`
-
-const Image = styled.img`
-  height: 100%;
-  width: 200px;
-  margin-right: 3rem;
-`
-
-const ArticleWrapper = styled(Flex)`
-  margin: 20px 0px;
-`
-
-const MetaInfoWrapper = styled(Flex)`
-  justify-content: space-between;
-  margin-top: 40px !important;
-  ${({ animate }) => {
-    return animate
-      ? css`
-          animation: 0.5s ${fadeInUp} ease-in-out;
-        `
-      : css`
-          animation: unset;
-        `
-  }}
-`
+import { MetaInfoWrapper, ArticleWrapper, Image, Content } from './styles'
 
 const LeftContent = ({ body, title, slug, showBelowSection, bgImage }) => {
   const titleRef = useRef(null)

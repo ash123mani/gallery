@@ -1,15 +1,17 @@
 import React from 'react'
-import { Box, Flex } from 'rebass'
+import { Box } from 'rebass'
 import { object, bool, string } from 'prop-types'
-import styled, { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'styled-components'
+import { isMobile } from 'react-device-detect'
 
-import Styles from './Styles'
-import Menu from './Menu'
-import Footer from './Footer'
+import theme from '../../styles/theme'
+import { infoArr } from '../../config/contactInfo'
 
-import theme from '../styles/theme'
-import { infoArr } from '../constants/contactInfo'
-// import AnimatedBird from '../shared/AnimatedBirds'
+import Styles from '../Styles'
+import Menu from '../header'
+import Footer from '../footer'
+
+import { Content } from './styles'
 
 if (typeof window !== 'undefined') {
   require('smooth-scroll')('a[href*="#"]', {
@@ -18,15 +20,9 @@ if (typeof window !== 'undefined') {
   })
 }
 
-export const Content = styled(Flex)`
-  /* padding: 10rem 0; */
-  align-items: center;
-  padding: 0rem 15rem;
-`
-
 const Layout = ({ children, ...props }) => {
   const { path } = props
-  const hideLinks = path === '/'
+  const hideLinks = path === '/' && !isMobile
 
   return (
     <React.Fragment>
