@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components'
 import { Box, Flex } from 'rebass'
-import { isMobile } from 'react-device-detect'
 
 const Wrapper = styled(Box)`
   width: 100%;
@@ -14,10 +13,9 @@ const Wrapper = styled(Box)`
     align-self: flex-end;
   }
 
-  ${isMobile &&
-    css`
-      height: calc(100vh - 80px);
-    `};
+  @media only screen and (max-width: 768px) {
+    height: calc(100vh - 80px);
+  }
 `
 
 const BlogCards = styled(Box)`
@@ -29,10 +27,9 @@ const BlogCards = styled(Box)`
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-gap: 20px;
 
-  ${isMobile &&
-    css`
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    `};
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
 `
 
 const ButtonWrapper = styled(Flex)`
@@ -47,11 +44,10 @@ const ButtonWrapper = styled(Flex)`
   background: white;
   overflow: auto;
 
-  ${isMobile &&
-    css`
-      padding: 2rem;
-      flex-wrap: wrap;
-    `};
+  @media only screen and (max-width: 768px) {
+    padding: 2rem;
+    flex-wrap: wrap;
+  }
 `
 
 const cuCss = css`
@@ -60,10 +56,10 @@ const cuCss = css`
 
 const RightContentContainer = styled(Flex)`
   flex-direction: column;
-  ${isMobile &&
-    css`
-      margin-top: 4rem !important;
-    `};
+
+  @media only screen and (max-width: 768px) {
+    margin-top: 4rem !important;
+  }
 `
 
 const Title = styled.p`
@@ -74,10 +70,9 @@ const Title = styled.p`
   border-radius: 4px;
   font-weight: 500;
 
-  ${isMobile &&
-    css`
-      padding: 1.6rem 0rem !important;
-    `};
+  @media only screen and (max-width: 768px) {
+    padding: 1.6rem 0rem !important;
+  }
 `
 
 const Author = styled.p`

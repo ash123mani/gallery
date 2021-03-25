@@ -1,6 +1,5 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { Flex } from 'rebass'
-import { isMobile } from 'react-device-detect'
 
 const InfoBox = styled(Flex)`
   padding: 2rem;
@@ -9,11 +8,10 @@ const InfoBox = styled(Flex)`
     color: ${({ hoverColor }) => hoverColor || 'black'};
   }
 
-  ${isMobile &&
-    css`
-      margin-top: 0rem !important;
-      padding: 2rem 0rem;
-    `};
+  @media only screen and (max-width: 768px) {
+    margin-top: 0rem !important;
+    padding: 2rem 0rem;
+  }
 `
 
 const StyledIcon = styled.img`
@@ -22,11 +20,10 @@ const StyledIcon = styled.img`
   margin-bottom: 0px;
   object-fit: cover;
 
-  ${isMobile &&
-    css`
-      height: 60px;
-      width: 60px;
-    `};
+  @media only screen and (max-width: 768px) {
+    height: 60px;
+    width: 60px;
+  }
 `
 
 const StyledLink = styled.a`
@@ -45,20 +42,18 @@ const Text = styled.p`
   color: var(--color-primary);
   font-weight: bold;
 
-  ${isMobile &&
-    css`
-      font-size: 2.4rem;
-    `};
+  @media only screen and (max-width: 768px) {
+    font-size: 2.4rem;
+  }
 `
 
 const Subtitle = styled.p`
   font-size: 2.4rem;
   color: var(--color-primary);
 
-  ${isMobile &&
-    css`
-      font-size: 1.8rem;
-    `};
+  @media only screen and (max-width: 768px) {
+    font-size: 1.8rem;
+  }
 `
 
 export { InfoBox, StyledIcon, StyledLink, Text, Subtitle }

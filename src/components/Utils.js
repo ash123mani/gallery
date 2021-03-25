@@ -1,6 +1,5 @@
 import styled, { css, keyframes } from 'styled-components'
 import { Flex } from 'rebass'
-import { isMobile } from 'react-device-detect'
 
 export const fadeInUp = keyframes`
   0% {
@@ -52,10 +51,9 @@ export const Title = styled.h1`
         `
   }};
 
-  ${isMobile &&
-    css`
-      font-size: 3.6rem;
-    `};
+  @media only screen and (max-width: 768px) {
+    font-size: 3.6rem;
+  }
 `
 
 export const Divider = styled(Flex)`

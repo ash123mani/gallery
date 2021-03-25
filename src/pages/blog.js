@@ -5,9 +5,7 @@ import { isMobile } from 'react-device-detect'
 
 import SEO from '../components/SEO'
 import BlogCard from '../shared/blog-cards'
-// import Button from '../../common/button'
 import shareImage from '../static/shareImage.jpeg'
-// import categories from '../../config/categories'
 import LandingLayout from '../shared/landing-layout'
 
 import {
@@ -23,9 +21,6 @@ const BlogPage = ({ data, location }) => {
   const [selectedCategory] = useState('all')
   const contentfulBlogPosts = data.allContentfulBlogPosts.edges
   const pathName = location.pathname
-  console.log({ pathName })
-
-  // const setCategory = category => setSelectedCategory(category)
 
   const renderRightContent = () => {
     return (
@@ -58,19 +53,6 @@ const BlogPage = ({ data, location }) => {
       </>
     )
   }
-
-  // const renderButtons = () => {
-  //   return Object.values(categories).map(category => (
-  //     <Button
-  //       key={category}
-  //       style={{ marginRight: '20px', zIndex: '20', marginBottom: isMobile ? '10px' : '0px' }}
-  //       onClick={() => setCategory(category.name)}
-  //       selected={category.name === selectedCategory}
-  //     >
-  //       {category.label}
-  //     </Button>
-  //   ))
-  // }
 
   const rightContent = () => {
     return (

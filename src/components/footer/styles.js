@@ -1,6 +1,5 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { Box, Flex } from 'rebass'
-import { isMobile } from 'react-device-detect'
 
 const Conatiner = styled.section`
   font-size: 1.8rem;
@@ -17,10 +16,9 @@ const Conatiner = styled.section`
     background-color: var(--link-active-background) !important;
   }
 
-  ${isMobile &&
-    css`
-      padding: 4rem;
-    `};
+  @media only screen and (max-width: 768px) {
+    padding: 4rem;
+  }
 `
 
 const Speech = styled.p`
@@ -33,10 +31,9 @@ const Speech = styled.p`
     font-style: italic;
   }
 
-  ${isMobile &&
-    css`
-      width: 100%;
-    `};
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 const ActName = styled.p`
@@ -57,10 +54,9 @@ const ActInfoContainer = styled(Flex)`
   justify-content: space-between;
   width: 80%;
 
-  ${isMobile &&
-    css`
-      width: 100%;
-    `};
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 export { Conatiner, Speech, ActName, NavigationContainer, ActLink, ActInfoContainer }

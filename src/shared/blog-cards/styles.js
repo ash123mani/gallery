@@ -1,7 +1,6 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { Box, Flex } from 'rebass'
-import { isMobile } from 'react-device-detect'
 
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -20,12 +19,11 @@ const StyledLink = styled(Link)`
     box-shadow: 6px 6px 15px rgba(74, 82, 44, 0.5);
   }
 
-  ${isMobile &&
-    css`
-      margin-bottom: 1.2rem !important;
-      border: none !important;
-      padding: 0px;
-    `};
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 1.2rem !important;
+    border: none !important;
+    padding: 0px;
+  }
 `
 
 const ImageContainer = styled(Box)`
@@ -43,31 +41,27 @@ const ImageContainer = styled(Box)`
     height: inherit;
   }
 
-  ${isMobile &&
-    css`
-      height: 200px;
-      height: 180px;
-    `};
+  @media only screen and (max-width: 768px) {
+    height: 180px;
+  }
 `
 
 const MetaInfo = styled(Flex)`
   justify-content: space-between;
   padding: 2.4rem 0rem;
 
-  ${isMobile &&
-    css`
-      padding: 1.6rem 0rem;
-    `};
+  @media only screen and (max-width: 768px) {
+    padding: 1.6rem 0rem;
+  }
 `
 
 const InfoContainer = styled(Box)`
   opacity: 0.8;
   padding-top: 2.4rem;
 
-  ${isMobile &&
-    css`
-      padding-top: 2rem;
-    `};
+  @media only screen and (max-width: 768px) {
+    padding-top: 2rem;
+  }
 `
 
 const Info = styled.p`

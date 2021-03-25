@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components'
 import { Flex } from 'rebass'
-import { isMobile } from 'react-device-detect'
 
 import { fadeInUp } from '../../../components/Utils'
 
@@ -13,15 +12,13 @@ const Content = styled(Flex)`
   height: calc(100vh - 170px);
   padding-top: 10rem;
 
-  ${isMobile &&
-    css`
-      width: 100%;
-      padding-left: 0px;
-      padding-right: 0px;
-      border-left: none;
-      padding-top: 0rem;
-      height: auto;
-    `};
+  @media only screen and (max-width: 768px) {
+    padding-left: 0px;
+    padding-right: 0px;
+    border-left: none;
+    padding-top: 0rem;
+    height: auto;
+  }
 `
 
 const Image = styled.img`

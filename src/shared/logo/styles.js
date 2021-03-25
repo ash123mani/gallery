@@ -1,7 +1,6 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { Flex } from 'rebass'
 import { Link } from 'gatsby'
-import { isMobile } from 'react-device-detect'
 
 const Container = styled(Flex)`
   height: 50px;
@@ -33,11 +32,10 @@ const Container = styled(Flex)`
     background: red;
   }
 
-  ${isMobile &&
-    css`
-      height: 40px;
-      width: 100px;
-    `};
+  @media only screen and (max-width: 768px) {
+    height: 40px;
+    width: 100px;
+  }
 `
 
 const Falak = styled.p`
@@ -45,10 +43,9 @@ const Falak = styled.p`
   font-weight: 700;
   color: #fff;
 
-  ${isMobile &&
-    css`
-      font-size: 1.8rem;
-    `};
+  @media only screen and (max-width: 768px) {
+    font-size: 1.8rem;
+  }
 `
 
 const StyledLink = styled(Link)``

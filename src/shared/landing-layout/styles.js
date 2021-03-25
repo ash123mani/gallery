@@ -1,18 +1,15 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { Flex } from 'rebass'
-import { isMobile } from 'react-device-detect'
 
 const Container = styled.section`
   display: flex;
   width: 100%;
-  /* justify-content: space-between; */
   overflow-x: hidden;
   height: 100%;
 
-  ${isMobile &&
-    css`
-      flex-direction: column;
-    `};
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 
 const RightContent = styled(Flex)`
@@ -44,13 +41,12 @@ const RightContent = styled(Flex)`
     }
   }
 
-  ${isMobile &&
-    css`
-      width: 100%;
-      padding-left: 0rem;
-      padding-top: 0rem;
-      height: auto;
-    `};
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    padding-left: 0rem;
+    padding-top: 0rem;
+    height: auto;
+  }
 `
 
 export { Container, RightContent }

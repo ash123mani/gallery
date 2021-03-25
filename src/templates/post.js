@@ -1,9 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { Box } from 'rebass'
-import { isMobile } from 'react-device-detect'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 import { Article, Title } from '../components/Utils'
@@ -19,14 +18,13 @@ const Wrapper = styled(Box)`
   border-left: 1px solid var(--border-color);
   padding-top: 10rem;
 
-  ${isMobile &&
-    css`
-      border-left: none !important;
-      padding: 0rem;
-    `};
-
   ${Content} {
     padding-top: 0px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    border-left: none !important;
+    padding: 0rem;
   }
 `
 
@@ -36,11 +34,10 @@ const HeadingContainer = styled.section`
   max-width: 86%;
   position: relative;
 
-  ${isMobile &&
-    css`
-      margin: 0rem;
-      max-width: 100%;
-    `};
+  @media only screen and (max-width: 768px) {
+    margin: 0rem;
+    max-width: 100%;
+  }
 `
 
 const Divider = styled(Box)`
@@ -49,10 +46,9 @@ const Divider = styled(Box)`
   background: var(--border-color);
   margin: 6rem 0rem !important;
 
-  ${isMobile &&
-    css`
-      margin: 4rem 0rem !important;
-    `};
+  @media only screen and (max-width: 768px) {
+    margin: 4rem 0rem !important;
+  }
 `
 
 const PostSection = styled.section`
@@ -60,14 +56,13 @@ const PostSection = styled.section`
   margin-top: 5rem;
   margin-bottom: 18rem;
 
-  ${isMobile &&
-    css`
-      padding: 0rem;
-      margin: 0rem;
-      max-width: 100%;
-      margin-top: 2rem;
-      margin-bottom: 10rem;
-    `};
+  @media only screen and (max-width: 768px) {
+    padding: 0rem;
+    margin: 0rem;
+    max-width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 10rem;
+  }
 `
 
 const Blogs = ({ data }) => {

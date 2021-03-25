@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components'
 import { Link } from 'gatsby'
-import { isMobile } from 'react-device-detect'
 
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -21,10 +20,9 @@ const StyledLink = styled(Link)`
       padding: 4px 12px;
     `};
 
-  ${isMobile &&
-    css`
-      padding: 8px 12px;
-    `};
+  @media only screen and (max-width: 768px) {
+    padding: 8px 12px;
+  }
 `
 
 const defaultStyles = css`
@@ -35,10 +33,9 @@ const defaultStyles = css`
   line-height: 40px;
   text-align: center;
 
-  ${isMobile &&
-    css`
-      font-size: 1.4rem;
-    `};
+  @media only screen and (max-width: 768px) {
+    font-size: 1.4rem;
+  }
 `
 
 const defaultActiveStyles = {

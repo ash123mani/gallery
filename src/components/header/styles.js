@@ -1,6 +1,5 @@
-import styled, { css, keyframes } from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { Box } from 'rebass'
-import { isMobile } from 'react-device-detect'
 
 const flag = keyframes`
   0% {
@@ -26,11 +25,10 @@ const Container = styled.section`
   align-items: center;
   height: 170px;
 
-  ${isMobile &&
-    css`
-      padding: 2rem;
-      height: 80px;
-    `};
+  @media only screen and (max-width: 768px) {
+    padding: 2rem;
+    height: 80px;
+  }
 `
 
 const LogoContainer = styled(Box)`
@@ -52,12 +50,13 @@ const LogoContainer = styled(Box)`
     top: -60px;
   }
 
-  ${isMobile &&
-    css`
-      &:after {
-        display: none;
-      }
-    `};
+  @media only screen and (max-width: 768px) {
+    &:after {
+      display: none;
+    }
+    padding: 2rem;
+    height: 80px;
+  }
 `
 
 export { Container, LogoContainer }
