@@ -4,31 +4,31 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   // eslint-disable-next-line no-undef
-  const loadGalleries = new Promise(resolve => {
-    graphql(`
-      query {
-        allContentfulGallery {
-          edges {
-            node {
-              slug
-            }
-          }
-        }
-      }
-    `).then(result => {
-      const pages = result.data.allContentfulGallery.edges
-      pages.map(({ node }) => {
-        createPage({
-          path: `${node.slug}/`,
-          component: path.resolve(`./src/templates/gallery.js`),
-          context: {
-            slug: node.slug,
-          },
-        })
-      })
-      resolve()
-    })
-  })
+  // const loadGalleries = new Promise(resolve => {
+  //   graphql(`
+  //     query {
+  //       allContentfulGallery {
+  //         edges {
+  //           node {
+  //             slug
+  //           }
+  //         }
+  //       }
+  //     }
+  //   `).then(result => {
+  //     const pages = result.data.allContentfulGallery.edges
+  //     pages.map(({ node }) => {
+  //       createPage({
+  //         path: `${node.slug}/`,
+  //         component: path.resolve(`./src/templates/gallery.js`),
+  //         context: {
+  //           slug: node.slug,
+  //         },
+  //       })
+  //     })
+  //     resolve()
+  //   })
+  // })
 
   // eslint-disable-next-line no-undef
   const loadPosts = new Promise(resolve => {
@@ -59,5 +59,5 @@ exports.createPages = ({ graphql, actions }) => {
   })
 
   // eslint-disable-next-line no-undef
-  return Promise.all([loadGalleries, loadPosts])
+  return Promise.all([loadPosts])
 }
