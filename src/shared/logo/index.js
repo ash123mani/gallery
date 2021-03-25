@@ -5,7 +5,7 @@ import { StyledLink, Falak, Container } from './styles'
 function NewLogo() {
   return (
     <Container>
-      <StyledLink>
+      <StyledLink to="/">
         <Falak>Falak</Falak>
       </StyledLink>
     </Container>

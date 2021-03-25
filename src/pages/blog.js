@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { isMobile } from 'react-device-detect'
 
-import SEO from '../../components/SEO'
-import BlogCard from '../../shared/blog-cards'
+import SEO from '../components/SEO'
+import BlogCard from '../shared/blog-cards'
 // import Button from '../../common/button'
-import shareImage from '../../static/shareImage.jpeg'
+import shareImage from '../static/shareImage.jpeg'
 // import categories from '../../config/categories'
-import LandingLayout from '../../shared/landing-layout'
+import LandingLayout from '../shared/landing-layout'
 
 import {
   Wrapper,
@@ -17,8 +17,7 @@ import {
   Title,
   RightContentContainer,
   cuCss,
-  // ButtonWrapper,
-} from './styles'
+} from '../styles/pages/blog'
 
 const BlogPage = ({ data, location }) => {
   const [selectedCategory] = useState('all')

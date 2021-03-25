@@ -4,8 +4,8 @@ import styled from 'styled-components'
 import { Box } from 'rebass'
 import { object } from 'prop-types'
 
-import LandingLayout from '../../shared/landing-layout'
-import BlogCard from '../../shared/blog-cards'
+import LandingLayout from '../shared/landing-layout'
+import BlogCard from '../shared/blog-cards'
 
 const Wrapper = styled(Box)`
   /* height: calc(100vh - 170px); */
