@@ -9,7 +9,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { Article, Title } from '../components/Utils'
 import SEO from '../components/SEO'
 import options from '../components/blogElements/BlogElements'
-import { Content } from '../components/Layout/styles'
+import { Content } from '../components/layout/styles'
 
 const Wrapper = styled(Box)`
   padding: 0 0rem 0rem 8rem;
