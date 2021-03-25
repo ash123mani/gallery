@@ -14,9 +14,7 @@ const BlogCard = React.forwardRef((props, ref) => {
       widthType={widthType}
       {...restProps}
     >
-      <ImageContainer>
-        <Img fluid={image.fluid} />
-      </ImageContainer>
+      <ImageContainer>{image && <Img fluid={image.fluid} />}</ImageContainer>
       <InfoContainer>
         <Title>{title}</Title>
       </InfoContainer>
