@@ -18,6 +18,7 @@ const Content = styled(Flex)`
     border-left: none;
     padding-top: 0rem;
     height: auto;
+    width: 100%;
   }
 `
 
