@@ -26,7 +26,7 @@ module.exports = {
         background_color: `#08080B`,
         theme_color: `#08080B`,
         display: `minimal-ui`,
-        icon: `src/static/hard-sun.svg`, // This path is relative to the root of the site.
+        icon: `src/static/falak.png`, // This path is relative to the root of the site.
       },
     },
     {
