@@ -7,7 +7,7 @@ const Container = styled.section`
   overflow-x: hidden;
   height: 100%;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 900px) {
     flex-direction: column;
   }
 `
@@ -41,7 +41,7 @@ const RightContent = styled(Flex)`
     }
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 900px) {
     width: 100%;
     padding-left: 0rem;
     padding-top: 0rem;

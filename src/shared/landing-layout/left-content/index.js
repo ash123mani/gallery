@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { object, string, bool } from 'prop-types'
 
-import { Article, Title } from '../../../components/Utils'
+import { Article, Title, Divider } from '../../../components/Utils'
 
 import Navigator from '../../navigator'
 
 import { MetaInfoWrapper, ArticleWrapper, Image, Content } from './styles'
 
-const LeftContent = ({ body, title, slug, showBelowSection, bgImage }) => {
+const LeftContent = ({ body, title, slug, showBelowSection, bgImage, showDivider }) => {
   const titleRef = useRef(null)
   const bodyRef = useRef(null)
 
@@ -30,12 +30,15 @@ const LeftContent = ({ body, title, slug, showBelowSection, bgImage }) => {
       <Title ref={titleRef} animate={animate}>
         {title}
       </Title>
-      <ArticleWrapper>
-        {bgImage && <Image src={bgImage} />}
-        <Article ref={bodyRef} animate={animate}>
-          {body}
-        </Article>
-      </ArticleWrapper>
+      {showDivider && <Divider />}
+      {body && (
+        <ArticleWrapper>
+          {bgImage && <Image src={bgImage} />}
+          <Article ref={bodyRef} animate={animate}>
+            {body}
+          </Article>
+        </ArticleWrapper>
+      )}
 
       {showBelowSection && (
         <MetaInfoWrapper animate={animate}>
@@ -54,12 +57,14 @@ LeftContent.propTypes = {
   slug: string,
   showBelowSection: bool,
   bgImage: string,
+  showDivider: bool,
 }
 
 LeftContent.defaultProps = {
   slug: null,
   showBelowSection: false,
   bgImage: '',
+  showDivider: true,
 }
 
 export default LeftContent

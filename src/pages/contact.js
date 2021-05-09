@@ -11,12 +11,16 @@ import { Wrapper } from '../styles/pages/contact'
 const Contact = () => {
   return (
     <>
-      <SEO title="CONTACT" image={shareImage} />
+      <SEO
+        title="Say Hi/🙏!! - Say us hello here."
+        description="You can say us hello or you can write to us yoour ideas."
+        image={shareImage}
+      />
       <Wrapper>
         <section>
           <LandingLayout
-            title="Hi You want to contact me are you mad!!!"
-            body="You Want Body as well"
+            title="Never hesitate to say a Hi/🙏 !!"
+            body="On Falak we never ever left any hi unHied, we read every message."
             rightContent={() => <ContactInfo infoArr={infoArr} />}
           />
         </section>

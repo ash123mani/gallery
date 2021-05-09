@@ -14,8 +14,12 @@ const GlobalStyles = createGlobalStyle`
     font-variant-ligatures: none;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
   }
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
 
   ::selection { background: green; }
 
@@ -38,12 +42,8 @@ const GlobalStyles = createGlobalStyle`
     font-size: 3rem;
   }
 
-  h3 {
+  h3, h4, h5, h6 {
     font-size: 2.4rem;
-  }
-
-  h4 {
-    font-size: 2rem;
   }
 
 

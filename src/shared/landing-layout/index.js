@@ -8,11 +8,26 @@ import DownArrow from '../down-arrow'
 import { Container, RightContent } from './styles'
 
 const LandingLayout = React.forwardRef(props => {
-  const { title, body, rightContent, slug, showBelowSection, showDownArrow, pathName } = props
+  const {
+    title,
+    body,
+    rightContent,
+    slug,
+    showBelowSection,
+    showDownArrow,
+    pathName,
+    showDivider,
+  } = props
   return (
     <Container>
-      {title && body && (
-        <LeftContent title={title} body={body} slug={slug} showBelowSection={showBelowSection} />
+      {(title || body) && (
+        <LeftContent
+          title={title}
+          body={body}
+          slug={slug}
+          showBelowSection={showBelowSection}
+          showDivider={showDivider}
+        />
       )}
       <RightContent>
         <Box flex="1">{rightContent()}</Box>
@@ -32,6 +47,7 @@ LandingLayout.propTypes = {
   showBelowSection: bool,
   showDownArrow: bool,
   pathName: bool,
+  showDivider: bool,
 }
 
 LandingLayout.defaultProps = {
@@ -40,6 +56,7 @@ LandingLayout.defaultProps = {
   showBelowSection: false,
   showDownArrow: false,
   pathName: '',
+  showDivider: true,
 }
 
 export default LandingLayout

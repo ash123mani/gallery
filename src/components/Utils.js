@@ -20,6 +20,7 @@ export const Article = styled.p`
   /* font-weight: 500; */
   transition: font-size 2s;
   font-size: 1.8rem;
+  width: 100%;
 
   ${({ animate }) => {
     return animate
@@ -33,11 +34,9 @@ export const Article = styled.p`
 `
 
 export const Title = styled.h1`
-  font-size: 4rem;
+  width: 100%;
   font-weight: bold;
-  margin-bottom: 2.4rem;
   color: var(--color-primary);
-  border-bottom: 1px solid var(--border-color);
   padding: 2rem 0rem;
   width: 100%;
 
@@ -52,12 +51,12 @@ export const Title = styled.h1`
   }};
 
   @media only screen and (max-width: 768px) {
-    font-size: 3.6rem;
+    font-size: 3.2rem;
   }
 `
 
 export const Divider = styled(Flex)`
-  height: ${({ height }) => height || '0px'};
-  width: ${({ width }) => width || '1px'};
-  background: ${({ bgColor }) => bgColor || 'gray'};
+  height: ${({ height }) => height || '1px'};
+  width: ${({ width }) => width || '100%'};
+  background: ${({ bgColor }) => bgColor || 'var(--border-color)'};
 `

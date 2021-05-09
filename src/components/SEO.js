@@ -7,7 +7,7 @@ const defaultTitle = 'I am Ashutosh. Web Developer and Poet based in Bangalore.'
 
 const SEO = props => (
   <Helmet>
-    <title>{`${props.title} - ${props.description}`}</title>
+    <title>{`${props.title}`}</title>
     <meta name="description" content={props.description} />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
@@ -37,9 +37,10 @@ SEO.propTypes = {
 }
 
 SEO.defaultProps = {
-  title: 'I am Ashutosh',
+  title: 'Falak - Where every perspective matters.',
   image: defaultImage,
-  description: 'Web Developer and Poet based in Bangalore.',
+  description:
+    'On Falak, every perspective matters, we believe that we all are what we percieve. So on Falak we are sharing experiences.',
 }
 
 export default SEO

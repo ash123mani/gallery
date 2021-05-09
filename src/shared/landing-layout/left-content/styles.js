@@ -12,7 +12,7 @@ const Content = styled(Flex)`
   height: calc(100vh - 170px);
   padding-top: 10rem;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 900px) {
     padding-left: 0px;
     padding-right: 0px;
     border-left: none;

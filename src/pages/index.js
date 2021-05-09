@@ -5,7 +5,7 @@ import { Box, Flex } from 'rebass'
 import styled from 'styled-components'
 import { isMobile } from 'react-device-detect'
 
-import { Title } from '../components/Utils'
+import { Title, Divider } from '../components/Utils'
 import SEO from '../components/SEO'
 import Navigator from '../shared/navigator'
 
@@ -28,7 +28,6 @@ const Wrapper = styled(Box)`
 
 const IndexPage = ({ data }) => {
   const home = data.contentfulHome
-  console.log({ home })
 
   const renderRightContent = () => {
     if (isMobile) {
@@ -36,13 +35,14 @@ const IndexPage = ({ data }) => {
     }
 
     return (
-      <React.Fragment>
-        <Title>I write about:-</Title>
-        <Flex flexDirection="column">
-          <Navigator to="/blog">Blog</Navigator>
-          <Navigator to="/contact">Contact</Navigator>
+      <Box>
+        <Title>Sections on Falak:-</Title>
+        <Divider />
+        <Flex flexDirection="column" marginTop={3}>
+          <Navigator to="/blog">Perspective</Navigator>
+          <Navigator to="/contact">Say Hi/🙏</Navigator>
         </Flex>
-      </React.Fragment>
+      </Box>
     )
   }
 

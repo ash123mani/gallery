@@ -25,7 +25,7 @@ const Container = styled.section`
   align-items: center;
   height: 170px;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1300px) {
     padding: 2rem;
     height: 80px;
   }
@@ -37,7 +37,6 @@ const LogoContainer = styled(Box)`
   animation-duration: 4s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  /* animation-fill-mode: both; */
   animation-direction: alternate;
 
   &:after {
@@ -54,8 +53,6 @@ const LogoContainer = styled(Box)`
     &:after {
       display: none;
     }
-    padding: 2rem;
-    height: 80px;
   }
 `
 

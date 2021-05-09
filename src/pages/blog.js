@@ -21,12 +21,12 @@ const BlogPage = ({ data, location }) => {
   const [selectedCategory] = useState('all')
   const contentfulBlogPosts = data.allContentfulBlogPosts.edges
   const pathName = location.pathname
+  const pageHeadingData = data.contentfulBlogHome
 
   const renderRightContent = () => {
     return (
       <>
         {contentfulBlogPosts.map(({ node }) => {
-          console.log('node', node)
           const blogCard = (
             <BlogCard
               blogPosts
@@ -54,14 +54,11 @@ const BlogPage = ({ data, location }) => {
     )
   }
 
+  // eslint-disable-next-line no-unused-vars
   const rightContent = () => {
     return (
       <RightContentContainer>
-        <Title>
-          Your time is limited, so dont waste it living someone elses life. Dont be trapped by
-          eslint-disable-next-line react/no-unescaped-entities dogma – which is living with the
-          results of other peoples thinking
-        </Title>
+        <Title>{pageHeadingData.flipTilte}</Title>
         <Author> -Steve Jobs</Author>
       </RightContentContainer>
     )
@@ -69,14 +66,18 @@ const BlogPage = ({ data, location }) => {
 
   return (
     <>
-      <SEO image={shareImage} />
+      <SEO
+        image={shareImage}
+        title="Perspective - We share our ideas here holding our perspectives."
+        description="We beleive in sharing our perspective, ideas, music and anything, because we on Falak believe in exploring things without bias."
+      />
       <Wrapper>
         <LandingLayout
-          title="Welcome here, where crazy things happer"
-          body="I am body"
-          rightContent={rightContent}
+          title={pageHeadingData.title}
+          // rightContent={rightContent}
           showDownArrow={!isMobile}
           pathName={pathName}
+          showDivider={false}
         />
         {/* {!isMobile && <ButtonWrapper>{renderButtons()}</ButtonWrapper>} */}
         <BlogCards id="bottom">{renderRightContent()}</BlogCards>

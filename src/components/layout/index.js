@@ -13,12 +13,12 @@ import Footer from '../footer'
 
 import { Content } from './styles'
 
-if (typeof window !== 'undefined') {
-  require('smooth-scroll')('a[href*="#"]', {
-    speed: 800,
-    speedAsDuration: true,
-  })
-}
+// if (typeof window !== 'undefined') {
+//   require('smooth-scroll')('a[href*="#"]', {
+//     speed: 500,
+//     speedAsDuration: true,
+//   })
+// }
 
 const Layout = ({ children, ...props }) => {
   const { path } = props

@@ -4,8 +4,13 @@ import { Flex } from 'rebass'
 const InfoBox = styled(Flex)`
   padding: 2rem;
   align-items: center;
+  filter: grayscale(0.5);
   &:hover p {
     color: ${({ hoverColor }) => hoverColor || 'black'};
+  }
+
+  &:hover {
+    filter: grayscale(0);
   }
 
   @media only screen and (max-width: 768px) {

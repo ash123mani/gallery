@@ -5,13 +5,12 @@ import styled from 'styled-components'
 import { Box } from 'rebass'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
-import { Article, Title } from '../components/Utils'
+import { Article, Title, Divider as CommomDivider } from '../components/Utils'
 import SEO from '../components/SEO'
 import options from '../components/blogElements/BlogElements'
 import { Content } from '../components/layout/styles'
 
 const Wrapper = styled(Box)`
-  padding: 0 0rem 0rem 8rem;
   height: calc(100vh - 190px);
   width: 100%;
   height: 100%;
@@ -22,7 +21,7 @@ const Wrapper = styled(Box)`
     padding-top: 0px;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1300px) {
     border-left: none !important;
     padding: 0rem;
   }
@@ -31,12 +30,14 @@ const Wrapper = styled(Box)`
 const HeadingContainer = styled.section`
   display: flex;
   flex-direction: column;
-  max-width: 86%;
+  max-width: 80%;
   position: relative;
+  margin: 0 auto;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1300px) {
     margin: 0rem;
     max-width: 100%;
+    padding: 0px;
   }
 `
 
@@ -46,17 +47,16 @@ const Divider = styled(Box)`
   background: var(--border-color);
   margin: 6rem 0rem !important;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1300px) {
     margin: 4rem 0rem !important;
   }
 `
 
 const PostSection = styled.section`
-  max-width: 86%;
-  margin-top: 5rem;
-  margin-bottom: 18rem;
+  max-width: 80%;
+  margin: 5rem auto 18rem;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1300px) {
     padding: 0rem;
     margin: 0rem;
     max-width: 100%;
@@ -70,12 +70,17 @@ const Blogs = ({ data }) => {
 
   return (
     <>
-      <SEO image={post.heroImage} title={post.title} description={post.excerpt} />
+      <SEO
+        image={post.heroImage}
+        title={`Perspective - ${post.homepage}`}
+        description={post.excerpt}
+      />
       <Wrapper>
         <HeadingContainer>
           <Title backgroundColor="#38332e" style={{ margin: '0rem' }}>
             {post.homepage}
           </Title>
+          <CommomDivider />
           <Article
             style={{
               backgroundColor: 'inherit',
