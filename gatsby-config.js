@@ -2,9 +2,12 @@
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Falak`,
+    description: `On Falak we discuss ideas and perspectives. We on Falak write on Love,Life,Chaos and Music.`,
+    author: `@falak`,
+    url: 'https://falak.netlify.app',
+    image: './src/static/falak.png',
+    twitterUsername: '@ashutos58989559',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

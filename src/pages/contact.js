@@ -45,6 +45,10 @@ export const query = graphql`
         fluid(quality: 65, maxHeight: 200) {
           ...GatsbyContentfulFluid_withWebp
         }
+        ogimg: fluid(maxWidth: 900, quality: 50) {
+          ...GatsbyContentfulFluid_withWebp
+          src
+        }
       }
     }
   }

@@ -71,9 +71,9 @@ const Blogs = ({ data }) => {
   return (
     <>
       <SEO
-        image={post.heroImage}
-        title={`Perspective - ${post.homepage}`}
-        description={post.excerpt}
+        title={post.seoTitle}
+        description={post.seoDescription}
+        image={post.heroImage.fluid.src}
       />
       <Wrapper>
         <HeadingContainer>

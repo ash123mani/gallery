@@ -47,11 +47,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <>
-      <SEO
-        image={home.heroImage.fluid.src}
-        title={home.seoTitle}
-        description={home.seoDescription}
-      />
+      <SEO title={home.seoTitle} description={home.seoDescription} />
       <Wrapper>
         <LandingLayout
           title={home.title}
@@ -77,6 +73,10 @@ export const query = graphql`
         title
         fluid(quality: 65, maxHeight: 200) {
           ...GatsbyContentfulFluid_withWebp
+        }
+        ogimg: fluid(maxWidth: 900, quality: 50) {
+          ...GatsbyContentfulFluid_withWebp
+          src
         }
       }
     }
