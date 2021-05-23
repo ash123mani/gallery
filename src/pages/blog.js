@@ -5,7 +5,6 @@ import { isMobile } from 'react-device-detect'
 
 import SEO from '../components/SEO'
 import BlogCard from '../shared/blog-cards'
-import shareImage from '../static/shareImage.jpeg'
 import LandingLayout from '../shared/landing-layout'
 
 import {
@@ -22,6 +21,8 @@ const BlogPage = ({ data, location }) => {
   const contentfulBlogPosts = data.allContentfulBlogPosts.edges
   const pathName = location.pathname
   const pageHeadingData = data.contentfulBlogHome
+
+  console.log('blogPostHome', pageHeadingData)
 
   const renderRightContent = () => {
     return (
@@ -67,9 +68,9 @@ const BlogPage = ({ data, location }) => {
   return (
     <>
       <SEO
-        image={shareImage}
-        title="Perspective - We share our ideas here holding our perspectives."
-        description="We beleive in sharing our perspective, ideas, music and anything, because we on Falak believe in exploring things without bias."
+        image={pageHeadingData.heroImage.fluid.src}
+        title={pageHeadingData.seoTitle}
+        description={pageHeadingData.seoDescription}
       />
       <Wrapper>
         <LandingLayout
@@ -90,10 +91,17 @@ export const query = graphql`
   query Blog {
     contentfulBlogHome {
       title
-      flipTilte
       body {
         json
       }
+      heroImage {
+        title
+        fluid(quality: 65, maxHeight: 200) {
+          ...GatsbyContentfulFluid_withWebp
+        }
+      }
+      seoTitle
+      seoDescription
     }
 
     allContentfulBlogPosts(sort: { fields: [publishedDate], order: DESC }) {

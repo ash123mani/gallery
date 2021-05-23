@@ -12,8 +12,6 @@ import Navigator from '../shared/navigator'
 import LandingLayout from '../shared/landing-layout'
 import bgHome from '../static/bg-home.jpg'
 
-import shareImage from '../static/shareImage.jpeg'
-
 const Wrapper = styled(Box)`
   overflow-x: hidden;
   width: 100%;
@@ -28,6 +26,7 @@ const Wrapper = styled(Box)`
 
 const IndexPage = ({ data }) => {
   const home = data.contentfulHome
+  console.log('homePage', home)
 
   const renderRightContent = () => {
     if (isMobile) {
@@ -48,7 +47,11 @@ const IndexPage = ({ data }) => {
 
   return (
     <>
-      <SEO image={shareImage} />
+      <SEO
+        image={home.heroImage.fluid.src}
+        title={home.seoTitle}
+        description={home.seoDescription}
+      />
       <Wrapper>
         <LandingLayout
           title={home.title}
@@ -65,12 +68,16 @@ export const query = graphql`
   query Index {
     contentfulHome {
       title
-      flipTitle
       subtitle {
         subtitle
       }
-      body {
-        json
+      seoTitle
+      seoDescription
+      heroImage {
+        title
+        fluid(quality: 65, maxHeight: 200) {
+          ...GatsbyContentfulFluid_withWebp
+        }
       }
     }
   }

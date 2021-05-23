@@ -1,20 +1,24 @@
 import React from 'react'
+import { object } from 'prop-types'
+import { graphql } from 'gatsby'
 
 import LandingLayout from '../shared/landing-layout'
 import ContactInfo from '../components/contact/contact-info'
 import SEO from '../components/SEO'
-import shareImage from '../static/shareImage.jpeg'
 import { infoArr } from '../config/contactInfo'
 
 import { Wrapper } from '../styles/pages/contact'
 
-const Contact = () => {
+const Contact = ({ data }) => {
+  const blogHome = data.contentfulContact
+  console.log('blogHome', blogHome)
+
   return (
     <>
       <SEO
-        title="Say Hi/🙏!! - Say us hello here."
-        description="You can say us hello or you can write to us yoour ideas."
-        image={shareImage}
+        image={blogHome.heroImage.fluid.src}
+        title={blogHome.seoTitle}
+        description={blogHome.seoDescription}
       />
       <Wrapper>
         <section>
@@ -27,6 +31,27 @@ const Contact = () => {
       </Wrapper>
     </>
   )
+}
+
+export const query = graphql`
+  query Contact {
+    contentfulContact {
+      title
+      subtitle {
+        subtitle
+      }
+      heroImage {
+        title
+        fluid(quality: 65, maxHeight: 200) {
+          ...GatsbyContentfulFluid_withWebp
+        }
+      }
+    }
+  }
+`
+
+Contact.propTypes = {
+  data: object.isRequired,
 }
 
 export default Contact
