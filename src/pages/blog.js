@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import { isMobile } from 'react-device-detect'
 
 import SEO from '../components/SEO'
 import BlogCard from '../shared/blog-cards'
-import LandingLayout from '../shared/landing-layout'
 
 import {
   Wrapper,
@@ -16,10 +14,9 @@ import {
   cuCss,
 } from '../styles/pages/blog'
 
-const BlogPage = ({ data, location }) => {
+const BlogPage = ({ data }) => {
   const [selectedCategory] = useState('all')
   const contentfulBlogPosts = data.allContentfulBlogPosts.edges
-  const pathName = location.pathname
   const pageHeadingData = data.contentfulBlogHome
 
   console.log('blogPostHome', pageHeadingData)
@@ -73,14 +70,7 @@ const BlogPage = ({ data, location }) => {
         description={pageHeadingData.seoDescription}
       />
       <Wrapper>
-        <LandingLayout
-          title={pageHeadingData.title}
-          // rightContent={rightContent}
-          showDownArrow={!isMobile}
-          pathName={pathName}
-          showDivider={false}
-        />
-        {/* {!isMobile && <ButtonWrapper>{renderButtons()}</ButtonWrapper>} */}
+        {/* <Title>Explore falak...</Title> */}
         <BlogCards id="bottom">{renderRightContent()}</BlogCards>
       </Wrapper>
     </>

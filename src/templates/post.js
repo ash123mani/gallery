@@ -32,7 +32,7 @@ const HeadingContainer = styled.section`
   flex-direction: column;
   max-width: 80%;
   position: relative;
-  margin: 0 auto;
+  margin: 0 30rem;
 
   @media only screen and (max-width: 1300px) {
     margin: 0rem;
@@ -41,20 +41,9 @@ const HeadingContainer = styled.section`
   }
 `
 
-const Divider = styled(Box)`
-  width: 100%;
-  height: 1px;
-  background: var(--border-color);
-  margin: 6rem 0rem !important;
-
-  @media only screen and (max-width: 1300px) {
-    margin: 4rem 0rem !important;
-  }
-`
-
 const PostSection = styled.section`
   max-width: 80%;
-  margin: 5rem auto 18rem;
+  margin: 5rem 30rem;
 
   @media only screen and (max-width: 1300px) {
     padding: 0rem;
@@ -90,7 +79,6 @@ const Blogs = ({ data }) => {
             {post.excerpt}
           </Article>
         </HeadingContainer>
-        <Divider />
         <PostSection id="bottom" className="post">
           {documentToReactComponents(post.body.json, options)}
         </PostSection>

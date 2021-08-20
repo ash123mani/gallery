@@ -11,12 +11,14 @@ const StyledLink = styled(Link)`
   transition: 0.35s ease-in-out;
   overflow: hidden;
   width: 100%;
+  height: min-content;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   &:hover {
     box-shadow: 6px 6px 15px rgba(74, 82, 44, 0.5);
+    border: 1px solid var(--border-color);
   }
 
   @media only screen and (max-width: 768px) {

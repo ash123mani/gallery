@@ -3,8 +3,9 @@ import styled from 'styled-components'
 
 const StyledImage = styled.img`
   border: 1px solid var(--border);
-  margin-bottom: 4rem;
-  margin-top: 4rem;
+  margin-bottom: 1.2rem;
+  margin-top: 1.2rem;
+  max-height: 400px;
 `
 
 const Image = node => {
