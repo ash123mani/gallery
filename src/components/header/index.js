@@ -1,5 +1,4 @@
 import React from 'react'
-import Headroom from 'react-headroom'
 import { bool } from 'prop-types'
 
 import NewLogo from '../../shared/logo'
@@ -9,28 +8,20 @@ import { Container, LogoContainer } from './styles'
 
 const Menu = ({ hideLinks }) => {
   return (
-    <Headroom
-      style={{
-        zIndex: '300',
-        transition: 'all .5s ease-in-out',
-        // position: 'fixed',
-      }}
-    >
-      <Container>
-        <LogoContainer>
-          <NewLogo />
-        </LogoContainer>
-        {!hideLinks && (
-          <p>
-            {/* <Navigator to="/gallery">Gallery</Navigator> */}
-            {/* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */}
-            <Navigator to="/blog">Perspective</Navigator>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <Navigator to="/contact">Say Hi/🙏</Navigator>
-          </p>
-        )}
-      </Container>
-    </Headroom>
+    <Container>
+      <LogoContainer>
+        <NewLogo />
+      </LogoContainer>
+      {!hideLinks && (
+        <p>
+          {/* <Navigator to="/gallery">Gallery</Navigator> */}
+          {/* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */}
+          {/* <Navigator to="/blog">Perspective</Navigator> */}
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <Navigator to="/contact">Say Hi/🙏</Navigator>
+        </p>
+      )}
+    </Container>
   )
 }
 

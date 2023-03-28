@@ -2,7 +2,6 @@ import React from 'react'
 import { Box } from 'rebass'
 import { object, bool, string } from 'prop-types'
 import { ThemeProvider } from 'styled-components'
-import { isMobile } from 'react-device-detect'
 
 import theme from '../../styles/theme'
 import { infoArr } from '../../config/contactInfo'
@@ -20,9 +19,8 @@ import { Content } from './styles'
 //   })
 // }
 
-const Layout = ({ children, ...props }) => {
-  const { path } = props
-  const hideLinks = path === '/' && !isMobile
+const Layout = ({ children }) => {
+  const hideLinks = false
 
   return (
     <React.Fragment>

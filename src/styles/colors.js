@@ -3,6 +3,10 @@ import { createGlobalStyle } from 'styled-components'
 const ColorStyles = createGlobalStyle`
   :root {
     --color-primary: #000;
+    --color-primary-medium: #000000a3;
+    --color-primary-light: #0000006e;
+
+    --code-block: #f5f5f5;
 
     --border-color: rgb(211 209 209);
     

@@ -58,7 +58,6 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     color: #0000;
     line-height: 1.4;
-    letter-spacing: 0.4px;
   }
 
   a {

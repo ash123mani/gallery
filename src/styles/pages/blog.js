@@ -6,8 +6,6 @@ const Wrapper = styled(Box)`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  height: calc(100vh - 170px);
-  /* margin-top: -100px; */
   overflow: auto;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -30,9 +28,6 @@ const BlogCards = styled(Box)`
   justify-content: flex-start;
   /* margin-top: 6rem !important; */
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(383px, 1fr));
-  grid-gap: 20px;
 
   @media only screen and (max-width: 768px) {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -60,7 +55,8 @@ const ButtonWrapper = styled(Flex)`
 `
 
 const cuCss = css`
-  margin-bottom: 4rem;
+  margin-bottom: 2.4rem;
+  border: 1px solid transparent;
 `
 
 const RightContentContainer = styled(Flex)`

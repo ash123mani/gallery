@@ -19,68 +19,50 @@ const StyledLink = styled(Link)`
   &:hover {
     box-shadow: 6px 6px 15px rgba(74, 82, 44, 0.5);
     border: 1px solid var(--border-color);
+    border-left: unset;
   }
 
   @media only screen and (max-width: 768px) {
     margin-bottom: 1.2rem !important;
     border: none !important;
-    padding: 0px;
-  }
-`
-
-const ImageContainer = styled(Box)`
-  width: 100%;
-  filter: grayscale(0);
-  height: 280px;
-
-  &:hover {
-    filter: grayscale(1);
-    transition: all 0.2s ease-in-out;
-  }
-
-  & .gatsby-image-wrapper {
-    border-radius: 2px;
-    height: inherit;
-  }
-
-  @media only screen and (max-width: 768px) {
-    height: 180px;
   }
 `
 
 const MetaInfo = styled(Flex)`
   justify-content: space-between;
-  padding: 2.4rem 0rem;
+  margin-top: 2.4rem;
 
   @media only screen and (max-width: 768px) {
-    padding: 1.6rem 0rem;
+    margin-top: 1.6rem;
   }
 `
 
 const InfoContainer = styled(Box)`
-  opacity: 0.8;
-  padding-top: 2.4rem;
-
-  @media only screen and (max-width: 768px) {
-    padding-top: 2rem;
-  }
+  opacity: 1;
 `
 
 const Info = styled.p`
-  color: #000;
-  font-size: 1.8rem;
+  color: var(--color-primary-light);
+  font-size: 1.6rem;
   font-weight: 500;
 `
 
 const Title = styled.h1`
   color: var(--color-primary);
-  font-size: 2.2rem;
+  font-size: 3.2rem;
   width: 100%;
   word-wrap: break-word;
-  /* word-spacing: 0.3rem; */
   line-height: 1.3;
-  /* padding: 0rem 1.8rem; */
   font-weight: 500;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 2.8rem;
+  }
+`
+const Description = styled.h3`
+  color: var(--color-primary-medium);
+  font-size: 2rem;
+  margin-top: 1.6rem;
 `
 
-export { Title, InfoContainer, Info, ImageContainer, StyledLink, MetaInfo }
+export { Title, InfoContainer, Info, StyledLink, MetaInfo, Description }

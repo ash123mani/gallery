@@ -11,11 +11,9 @@ import options from '../components/blogElements/BlogElements'
 import { Content } from '../components/layout/styles'
 
 const Wrapper = styled(Box)`
-  height: calc(100vh - 190px);
-  width: 100%;
+  width: 80%;
   height: 100%;
-  border-left: 1px solid var(--border-color);
-  padding-top: 10rem;
+  margin: 0 auto;
 
   ${Content} {
     padding-top: 0px;
@@ -25,14 +23,15 @@ const Wrapper = styled(Box)`
     border-left: none !important;
     padding: 0rem;
   }
+
+  @media only screen and (max-width: 768px) {
+    width: 96%;
+  }
 `
 
 const HeadingContainer = styled.section`
   display: flex;
   flex-direction: column;
-  max-width: 80%;
-  position: relative;
-  margin: 0 30rem;
 
   @media only screen and (max-width: 1300px) {
     margin: 0rem;
@@ -42,8 +41,8 @@ const HeadingContainer = styled.section`
 `
 
 const PostSection = styled.section`
-  max-width: 80%;
-  margin: 5rem 30rem;
+  /* max-width: 80%;
+  margin: 5rem 30rem; */
 
   @media only screen and (max-width: 1300px) {
     padding: 0rem;

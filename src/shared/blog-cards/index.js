@@ -1,22 +1,16 @@
 import React from 'react'
-import Img from 'gatsby-image'
 import { object, bool, string } from 'prop-types'
 
-import { Title, InfoContainer, Info, ImageContainer, StyledLink, MetaInfo } from './styles'
+import { Title, InfoContainer, Info, StyledLink, MetaInfo, Description } from './styles'
 
 const BlogCard = React.forwardRef((props, ref) => {
-  const { image, blogPosts, slug, tag, publishDate, title, widthType, ...restProps } = props
+  const { blogPosts, slug, tag, publishDate, title, excerpt, ...restProps } = props
 
   return (
-    <StyledLink
-      to={blogPosts ? `/blog${slug}/` : `${slug}/`}
-      ref={ref}
-      widthType={widthType}
-      {...restProps}
-    >
-      <ImageContainer>{image && <Img fluid={image.fluid} />}</ImageContainer>
+    <StyledLink to={blogPosts ? `/blog${slug}/` : `${slug}/`} ref={ref} {...restProps}>
       <InfoContainer>
         <Title>{title}</Title>
+        <Description>{excerpt}</Description>
       </InfoContainer>
       <MetaInfo>
         <Info>{publishDate}</Info>
@@ -35,11 +29,7 @@ BlogCard.propTypes = {
   tag: string.isRequired,
   publishDate: string.isRequired,
   title: string.isRequired,
-  widthType: string,
-}
-
-BlogCard.defaultProps = {
-  widthType: '',
+  excerpt: string.isRequired,
 }
 
 export default BlogCard

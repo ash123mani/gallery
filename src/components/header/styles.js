@@ -48,12 +48,6 @@ const LogoContainer = styled(Box)`
     left: 0px;
     top: -60px;
   }
-
-  @media only screen and (max-width: 768px) {
-    &:after {
-      display: none;
-    }
-  }
 `
 
 export { Container, LogoContainer }

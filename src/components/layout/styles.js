@@ -3,11 +3,13 @@ import { Flex } from 'rebass'
 
 const Content = styled(Flex)`
   align-items: center;
-  padding: 0rem 15rem;
+  margin: 0rem 15rem;
   overflow: auto;
+  border-left: 1px solid var(--border-color);
 
   @media only screen and (max-width: 1300px) {
-    padding: 10rem 2rem 0rem;
+    margin: 0rem 2rem;
+    /* border-left: 1px solid var(--border-color); */
   }
 `
 

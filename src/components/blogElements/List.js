@@ -19,7 +19,7 @@ const List = styled.ul`
 
   > li > p:before {
     content: '☀';
-    margin-right: 12px;
+    margin-right: 8px;
   }
 `
 

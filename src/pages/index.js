@@ -1,90 +1,86 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import { Box, Flex } from 'rebass'
-import styled from 'styled-components'
-import { isMobile } from 'react-device-detect'
 
-import { Title, Divider } from '../components/Utils'
 import SEO from '../components/SEO'
-import Navigator from '../shared/navigator'
+import BlogCard from '../shared/blog-cards'
 
-import LandingLayout from '../shared/landing-layout'
-import bgHome from '../static/bg-home.jpg'
+import { Wrapper, BlogCards, cuCss } from '../styles/pages/blog'
 
-const Wrapper = styled(Box)`
-  overflow-x: hidden;
-  width: 100%;
-  height: calc(100vh - 170px);
-
-  @media only screen and (max-width: 768px) {
-    & {
-      height: calc(100vh - 80px);
-    }
-  }
-`
-
-const IndexPage = ({ data }) => {
-  const home = data.contentfulHome
-  console.log('homePage', home)
+const BlogPage = ({ data }) => {
+  const [selectedCategory] = useState('all')
+  const contentfulBlogPosts = data.allContentfulBlogPosts.edges
 
   const renderRightContent = () => {
-    if (isMobile) {
-      return null
-    }
-
     return (
-      <Box>
-        <Title>Sections on Falak:-</Title>
-        <Divider />
-        <Flex flexDirection="column" marginTop={3}>
-          <Navigator to="/blog">Perspective</Navigator>
-          <Navigator to="/contact">Say Hi/🙏</Navigator>
-        </Flex>
-      </Box>
+      <>
+        {contentfulBlogPosts.map(({ node }) => {
+          const blogCard = (
+            <BlogCard
+              blogPosts
+              key={node.id}
+              id={node.id}
+              slug={node.slug}
+              title={node.homepage}
+              excerpt={node.excerpt}
+              publishDate={node.publishedDate}
+              image={node.heroImage}
+              tag={node.tags.split(' ')[0]}
+              className="blog"
+              css={cuCss}
+            />
+          )
+
+          if (node.content === selectedCategory || selectedCategory === 'all') {
+            return blogCard
+          }
+
+          return null
+        })}
+      </>
     )
   }
 
   return (
     <>
-      <SEO title={home.seoTitle} description={home.seoDescription} />
+      <SEO />
       <Wrapper>
-        <LandingLayout
-          title={home.title}
-          body={home.subtitle.subtitle}
-          rightContent={renderRightContent}
-          bgImage={bgHome}
-        />
+        {/* <Title>Explore falak...</Title> */}
+        <BlogCards id="bottom">{renderRightContent()}</BlogCards>
       </Wrapper>
     </>
   )
 }
 
 export const query = graphql`
-  query Index {
-    contentfulHome {
-      title
-      subtitle {
-        subtitle
-      }
-      seoTitle
-      seoDescription
-      heroImage {
-        title
-        fluid(quality: 65, maxHeight: 200) {
-          ...GatsbyContentfulFluid_withWebp
-        }
-        ogimg: fluid(maxWidth: 900, quality: 50) {
-          ...GatsbyContentfulFluid_withWebp
-          src
+  query Blogs {
+    allContentfulBlogPosts(sort: { fields: [publishedDate], order: DESC }) {
+      edges {
+        node {
+          id
+          slug
+          homepage
+          body {
+            json
+          }
+          publishedDate(formatString: "d/M/YYYY")
+          tags
+          heroImage {
+            title
+            fluid(quality: 65, maxHeight: 200) {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
+          excerpt
         }
       }
     }
   }
 `
 
-IndexPage.propTypes = {
+BlogPage.propTypes = {
   data: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
 }
 
-export default IndexPage
+export default BlogPage
