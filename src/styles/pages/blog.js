@@ -3,6 +3,7 @@ import { Box, Flex } from 'rebass'
 
 const Wrapper = styled(Box)`
   width: 100%;
+  margin-bottom: 16rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -19,11 +20,11 @@ const Wrapper = styled(Box)`
   }
 
   @media only screen and (max-width: 768px) {
-    height: calc(100vh - 80px);
+    margin-bottom: 8rem;
   }
 `
 
-const BlogCards = styled(Box)`
+const BlogCards = styled.section`
   flex-wrap: wrap;
   justify-content: flex-start;
   /* margin-top: 6rem !important; */

@@ -24,8 +24,8 @@ const Layout = ({ children }) => {
 
   return (
     <React.Fragment>
-      <Styles />
       <ThemeProvider theme={theme}>
+        <Styles />
         <Box>
           <Menu hideLinks={hideLinks} />
         </Box>

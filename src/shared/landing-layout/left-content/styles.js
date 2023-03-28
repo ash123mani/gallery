@@ -8,7 +8,6 @@ const Content = styled(Flex)`
   padding-right: 4rem;
   flex-direction: column;
   padding-left: 20px;
-  border-left: 1px solid var(--border-color);
   height: calc(100vh - 170px);
   padding-top: 10rem;
 

@@ -14,6 +14,7 @@ const Wrapper = styled(Box)`
   width: 80%;
   height: 100%;
   margin: 0 auto;
+  margin-bottom: 16rem;
 
   ${Content} {
     padding-top: 0px;
@@ -26,6 +27,7 @@ const Wrapper = styled(Box)`
 
   @media only screen and (max-width: 768px) {
     width: 96%;
+    margin-bottom: 8rem;
   }
 `
 
