@@ -59,7 +59,6 @@ const PostSection = styled.section`
 
 const Blogs = ({ data }) => {
   const post = data.contentfulBlogPosts
-  console.log('GIT_CLIENT_ID', process.env)
 
   return (
     <>
