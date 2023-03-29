@@ -92,9 +92,9 @@ const Blogs = ({ data }) => {
         {typeof window !== 'undefined' && (
           <GitalkComponent
             options={{
-              clientID: process.env.GIT_CLIENT_ID,
-              clientSecret: process.env.GIT_CLIENT_SECRET,
-              repo: process.env.GIT_REPO, // The repository of store comments,
+              clientID: process.env.GATSBY_GIT_CLIENT_ID,
+              clientSecret: process.env.GATSBY_GIT_CLIENT_SECRET,
+              repo: process.env.GATSBY_GIT_REPO, // The repository of store comments,
               owner: 'ash123mani',
               admin: ['ash123mani'],
               id: location.pathname, // Ensure uniqueness and length less than 50

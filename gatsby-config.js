@@ -1,5 +1,3 @@
-// const siteConfig = require('./src/utils/siteConfig')
-
 module.exports = {
   siteMetadata: {
     title: `Falak`,
