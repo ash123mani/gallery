@@ -1,13 +1,14 @@
 import React from 'react'
 
 import SEO from '../components/SEO'
-import { Wrapper } from '../styles/pages/contact'
+import { Wrapper, Title, StyledLink } from '../styles/pages/404'
 
 const NotFoundPage = () => (
   <>
     <SEO title="404: Not found" />
     <Wrapper>
-      <h1>Not found</h1>
+      <Title>You landed on a non-existential terrain</Title>
+      <StyledLink to="/">Go Back Home</StyledLink>
     </Wrapper>
   </>
 )

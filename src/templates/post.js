@@ -59,6 +59,7 @@ const PostSection = styled.section`
 
 const Blogs = ({ data }) => {
   const post = data.contentfulBlogPosts
+  console.log('post', post)
 
   return (
     <>
@@ -125,10 +126,12 @@ export const query = graphql`
           src
         }
       }
-      excerpt
       body {
         json
       }
+      excerpt
+      seoDescription
+      seoTitle
     }
   }
 `

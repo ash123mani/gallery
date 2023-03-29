@@ -10,6 +10,10 @@ const SEO = props => {
     <Helmet>
       <title>{`${props.title}`}</title>
       <meta name="description" content={props.description} />
+      <meta
+        name="keywords"
+        content="Learn React, React Article, Redux Blogs, HTML Article, Learn JavaScript, Learn TypeScript"
+      ></meta>
       <meta property="og:locale" content="en_US" />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Falak" />
@@ -35,10 +39,10 @@ SEO.propTypes = {
 }
 
 SEO.defaultProps = {
-  title: 'Falak - Where every perspective matters.',
+  title: 'Falak - A curated list of blogs about front-end web development',
   image: defaultImage,
   description:
-    'On Falak, every perspective matters, we believe that we all are what we percieve. So on Falak we are sharing experiences.',
+    'Falak - The blog and infrequent writings of Ashutosh Mani Tripathi about front-end web development.',
 }
 
 export default SEO

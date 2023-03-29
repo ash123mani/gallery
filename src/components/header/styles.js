@@ -33,11 +33,11 @@ const Container = styled.section`
 
 const LogoContainer = styled(Box)`
   position: relative;
-  animation-name: ${flag};
+  /* animation-name: ${flag};
   animation-duration: 4s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  animation-direction: alternate;
+  animation-direction: alternate; */
 
   &:after {
     content: '';
