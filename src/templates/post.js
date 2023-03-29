@@ -94,7 +94,7 @@ const Blogs = ({ data }) => {
             options={{
               clientID: process.env.GIT_CLIENT_ID,
               clientSecret: process.env.GIT_CLIENT_SECRET,
-              repo: 'falak-comments', // The repository of store comments,
+              repo: process.env.GIT_REPO, // The repository of store comments,
               owner: 'ash123mani',
               admin: ['ash123mani'],
               id: location.pathname, // Ensure uniqueness and length less than 50
