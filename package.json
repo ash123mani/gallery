@@ -32,6 +32,7 @@
     "gatsby-source-filesystem": "^2.1.36",
     "gatsby-transformer-remark": "^2.6.30",
     "gatsby-transformer-sharp": "^2.3.3",
+    "gitalk": "^1.8.0",
     "i": "^0.3.6",
     "lodash": "^4.17.15",
     "npm": "^6.13.1",

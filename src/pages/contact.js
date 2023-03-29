@@ -11,7 +11,6 @@ import { Wrapper } from '../styles/pages/contact'
 
 const Contact = ({ data }) => {
   const blogHome = data.contentfulContact
-  console.log('blogHome', blogHome)
 
   return (
     <>

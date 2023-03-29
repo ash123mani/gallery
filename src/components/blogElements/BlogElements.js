@@ -13,7 +13,6 @@ import Pre from './Pre'
 const options = {
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node, children) => {
-      console.log('Text', node)
       if (node.content.length === 1 && find(node.content[0].marks, { type: 'code' })) {
         return (
           <Pre>

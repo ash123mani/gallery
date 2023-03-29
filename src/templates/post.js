@@ -4,6 +4,8 @@ import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import { Box } from 'rebass'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import 'gitalk/dist/gitalk.css'
+import GitalkComponent from 'gitalk/dist/gitalk-component'
 
 import { Article, Title, Divider as CommomDivider } from '../components/Utils'
 import SEO from '../components/SEO'
@@ -84,6 +86,20 @@ const Blogs = ({ data }) => {
           {documentToReactComponents(post.body.json, options)}
         </PostSection>
         {/* <Divider /> */}
+
+        {typeof window !== 'undefined' && (
+          <GitalkComponent
+            options={{
+              clientID: process.env.GIT_CLIENT_ID,
+              clientSecret: process.env.GIT_CLIENT_SECRET,
+              repo: 'https://github.com/ash123mani/falak-comments', // The repository of store comments,
+              owner: 'ash123mani',
+              admin: ['ash123mani'],
+              id: location.pathname, // Ensure uniqueness and length less than 50
+              distractionFreeMode: false, // Facebook-like distraction free mode
+            }}
+          />
+        )}
       </Wrapper>
     </>
   )
