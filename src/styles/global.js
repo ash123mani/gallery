@@ -52,11 +52,9 @@ const GlobalStyles = createGlobalStyle`
   ul,
   li,
   form,
-  textarea,
   input {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    color: #0000;
     line-height: 1.4;
   }
 

@@ -59,6 +59,7 @@ const PostSection = styled.section`
 
 const Blogs = ({ data }) => {
   const post = data.contentfulBlogPosts
+  console.log('GIT_CLIENT_ID', process.env)
 
   return (
     <>
@@ -86,13 +87,14 @@ const Blogs = ({ data }) => {
           {documentToReactComponents(post.body.json, options)}
         </PostSection>
         {/* <Divider /> */}
+        <div id="gitalk-container"></div>
 
         {typeof window !== 'undefined' && (
           <GitalkComponent
             options={{
               clientID: process.env.GIT_CLIENT_ID,
               clientSecret: process.env.GIT_CLIENT_SECRET,
-              repo: 'https://github.com/ash123mani/falak-comments', // The repository of store comments,
+              repo: 'falak-comments', // The repository of store comments,
               owner: 'ash123mani',
               admin: ['ash123mani'],
               id: location.pathname, // Ensure uniqueness and length less than 50

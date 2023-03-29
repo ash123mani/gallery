@@ -19,7 +19,7 @@ const Footer = () => {
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         {/* <Navigator to="/gallery">Gallery</Navigator> */}
         {/* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */}
-        <Navigator to="/blog">Perspective</Navigator>
+        {/* <Navigator to="/blog">Perspective</Navigator> */}
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <Navigator to="/contact">Say Hi/🙏</Navigator>
       </NavigationContainer>
