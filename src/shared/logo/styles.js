@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import { Flex } from 'rebass'
 import { Link } from 'gatsby'
 
-const Container = styled(Flex)`
+const Container = styled.div`
+  display: flex;
   height: 50px;
   width: 150px;
   justify-content: center;

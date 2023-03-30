@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Box } from 'rebass'
 
 import { StyledLink, InfoBox, StyledIcon, Text, Subtitle } from './styles'
 
@@ -12,10 +11,10 @@ const Contact = ({ infoArr }) => {
           <StyledLink key={index} href={info.href} target="_blank">
             <InfoBox hoverColor={info.hoverColor}>
               <StyledIcon src={info.img} />
-              <Box pl={3} pr={2}>
+              <div>
                 <Text fontSize="3rem">{info.title}</Text>
                 <Subtitle>{info.subtitle}</Subtitle>
-              </Box>
+              </div>
             </InfoBox>
           </StyledLink>
         )

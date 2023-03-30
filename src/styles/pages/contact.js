@@ -1,7 +1,6 @@
 import styled from 'styled-components'
-import { Box } from 'rebass'
 
-const Wrapper = styled(Box)`
+const Wrapper = styled.div`
   height: calc(100vh - 170px);
   width: 100%;
   margin-bottom: 16rem;

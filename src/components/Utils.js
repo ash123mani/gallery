@@ -1,5 +1,4 @@
 import styled, { css, keyframes } from 'styled-components'
-import { Flex } from 'rebass'
 
 export const fadeInUp = keyframes`
   0% {
@@ -55,7 +54,8 @@ export const Title = styled.h1`
   }
 `
 
-export const Divider = styled(Flex)`
+export const Divider = styled.div`
+  display: flex;
   height: ${({ height }) => height || '1px'};
   width: ${({ width }) => width || '100%'};
   background: ${({ bgColor }) => bgColor || 'var(--border-color)'};

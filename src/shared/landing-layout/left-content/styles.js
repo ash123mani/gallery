@@ -1,9 +1,8 @@
 import styled, { css } from 'styled-components'
-import { Flex } from 'rebass'
 
 import { fadeInUp } from '../../../components/Utils'
 
-const Content = styled(Flex)`
+const Content = styled.div`
   width: 50%;
   padding-right: 4rem;
   flex-direction: column;
@@ -27,11 +26,13 @@ const Image = styled.img`
   margin-right: 3rem;
 `
 
-const ArticleWrapper = styled(Flex)`
+const ArticleWrapper = styled.div`
+  display: flex;
   margin: 20px 0px;
 `
 
-const MetaInfoWrapper = styled(Flex)`
+const MetaInfoWrapper = styled.div`
+  display: flex;
   justify-content: space-between;
   margin-top: 40px !important;
   ${({ animate }) => {

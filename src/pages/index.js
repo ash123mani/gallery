@@ -24,7 +24,6 @@ const BlogPage = ({ data }) => {
               title={node.homepage}
               excerpt={node.excerpt}
               publishDate={node.publishedDate}
-              image={node.heroImage}
               tag={node.tags.split(' ')[0]}
               className="blog"
               css={cuCss}

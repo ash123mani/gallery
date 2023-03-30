@@ -1,5 +1,4 @@
 import React from 'react'
-import { Box } from 'rebass'
 import { string, object, func, bool } from 'prop-types'
 
 import LeftContent from './left-content'
@@ -30,7 +29,7 @@ const LandingLayout = React.forwardRef(props => {
         />
       )}
       <RightContent>
-        <Box flex="1">{rightContent()}</Box>
+        <div flex="1">{rightContent()}</div>
         {showDownArrow && <DownArrow pathName={pathName} />}
       </RightContent>
     </Container>

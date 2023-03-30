@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { Flex } from 'rebass'
 
-const Content = styled(Flex)`
+const Content = styled.div`
+  display: flex;
   align-items: center;
   margin: 0rem 15rem;
   overflow: auto;

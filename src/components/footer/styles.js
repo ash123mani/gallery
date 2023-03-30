@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { Box, Flex } from 'rebass'
 
 const Conatiner = styled.section`
   font-size: 1.8rem;
@@ -46,11 +45,12 @@ const ActLink = styled.a`
   color: #a09b9b94;
 `
 
-const NavigationContainer = styled(Box)`
+const NavigationContainer = styled.div`
   margin-bottom: 4rem !important;
 `
 
-const ActInfoContainer = styled(Flex)`
+const ActInfoContainer = styled.div`
+  display: flex;
   justify-content: space-between;
   width: 80%;
 

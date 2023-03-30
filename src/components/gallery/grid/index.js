@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 import FsLightbox from 'fslightbox-react'
 import { chunk, sum } from 'lodash'
-import { Box } from 'rebass'
 
 import { Title, imageBoxStyles } from './styles'
 
@@ -23,7 +22,7 @@ const GalleryGrid = ({ title, images, itemsPerRow: itemsPerRowByBreakpoints }) =
   }
 
   return (
-    <Box>
+    <div>
       <Title key={title}>{title}</Title>
       {images.map((image, i) => {
         const widthArr = rowAspectRatioSumsByBreakpoints.map((rowAspectRatioSums, j) => {
@@ -33,9 +32,9 @@ const GalleryGrid = ({ title, images, itemsPerRow: itemsPerRowByBreakpoints }) =
         })
 
         return (
-          <Box onClick={() => openLightbox(i)} key={image.id} width={widthArr} css={imageBoxStyles}>
+          <div onClick={() => openLightbox(i)} key={image.id} width={widthArr} css={imageBoxStyles}>
             <Img onClick={() => openLightbox(i)} fluid={image.thumbnail} title={image.title} />
-          </Box>
+          </div>
         )
       })}
       <FsLightbox
@@ -46,7 +45,7 @@ const GalleryGrid = ({ title, images, itemsPerRow: itemsPerRowByBreakpoints }) =
           console.log(imageIndex)
         }}
       />
-    </Box>
+    </div>
   )
 }
 

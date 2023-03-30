@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { Flex } from 'rebass'
 
 const Container = styled.section`
   display: flex;
@@ -12,7 +11,8 @@ const Container = styled.section`
   }
 `
 
-const RightContent = styled(Flex)`
+const RightContent = styled.div`
+  display: flex;
   padding-left: 4rem;
   width: 50%;
   flex-direction: column;

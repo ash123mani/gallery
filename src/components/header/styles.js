@@ -1,5 +1,4 @@
 import styled, { keyframes } from 'styled-components'
-import { Box } from 'rebass'
 
 const flag = keyframes`
   0% {
@@ -31,7 +30,7 @@ const Container = styled.section`
   }
 `
 
-const LogoContainer = styled(Box)`
+const LogoContainer = styled.div`
   position: relative;
   /* animation-name: ${flag};
   animation-duration: 4s;

@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components'
-import { Box, Flex } from 'rebass'
 
-const Wrapper = styled(Box)`
+const Wrapper = styled.div`
   width: 100%;
   margin-bottom: 16rem;
   display: flex;
@@ -27,7 +26,6 @@ const Wrapper = styled(Box)`
 const BlogCards = styled.section`
   flex-wrap: wrap;
   justify-content: flex-start;
-  /* margin-top: 6rem !important; */
   width: 100%;
 
   @media only screen and (max-width: 768px) {
@@ -37,7 +35,8 @@ const BlogCards = styled.section`
   }
 `
 
-const ButtonWrapper = styled(Flex)`
+const ButtonWrapper = styled.div`
+  display: flex;
   width: 100%;
   justify-content: flex-start;
   align-items: center;
@@ -60,7 +59,8 @@ const cuCss = css`
   border: 1px solid transparent;
 `
 
-const RightContentContainer = styled(Flex)`
+const RightContentContainer = styled.div`
+  display: flex;
   flex-direction: column;
 
   @media only screen and (max-width: 768px) {

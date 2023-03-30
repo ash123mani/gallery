@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
-import { Box } from 'rebass'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import 'gitalk/dist/gitalk.css'
 import GitalkComponent from 'gitalk/dist/gitalk-component'
@@ -12,7 +11,7 @@ import SEO from '../components/SEO'
 import options from '../components/blogElements/BlogElements'
 import { Content } from '../components/layout/styles'
 
-const Wrapper = styled(Box)`
+const Wrapper = styled.div`
   width: 80%;
   height: 100%;
   margin: 0 auto;

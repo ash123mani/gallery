@@ -1,5 +1,4 @@
 import React from 'react'
-import { Box } from 'rebass'
 import { object, bool, string } from 'prop-types'
 import { ThemeProvider } from 'styled-components'
 
@@ -26,9 +25,9 @@ const Layout = ({ children }) => {
     <React.Fragment>
       <ThemeProvider theme={theme}>
         <Styles />
-        <Box>
+        <div>
           <Menu hideLinks={hideLinks} />
-        </Box>
+        </div>
         <Content>{children}</Content>
         <Footer infoArr={infoArr} />
       </ThemeProvider>

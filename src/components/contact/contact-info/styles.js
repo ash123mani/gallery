@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { Flex } from 'rebass'
 
-const InfoBox = styled(Flex)`
+const InfoBox = styled.div`
+  display: flex;
   padding: 2rem;
   align-items: center;
   filter: grayscale(0.5);

@@ -1,8 +1,7 @@
 import styled from 'styled-components'
-import { Box } from 'rebass'
 import { Link } from 'gatsby'
 
-const Wrapper = styled(Box)`
+const Wrapper = styled.div`
   height: calc(100vh - 170px);
   width: 100%;
   display: flex;
@@ -21,6 +20,7 @@ const Title = styled.h1`
   color: var(--primary-color);
   font-weight: 600;
   margin-bottom: 20px;
+  text-align: center;
 `
 
 const StyledLink = styled(Link)`

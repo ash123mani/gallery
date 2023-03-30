@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import { Box, Flex } from 'rebass'
 
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -28,7 +27,8 @@ const StyledLink = styled(Link)`
   }
 `
 
-const MetaInfo = styled(Flex)`
+const MetaInfo = styled.div`
+  display: flex;
   justify-content: space-between;
   margin-top: 2.4rem;
 
@@ -37,7 +37,7 @@ const MetaInfo = styled(Flex)`
   }
 `
 
-const InfoContainer = styled(Box)`
+const InfoContainer = styled.div`
   opacity: 1;
 `
 
