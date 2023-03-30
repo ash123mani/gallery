@@ -47,6 +47,7 @@ const ActLink = styled.a`
 
 const NavigationContainer = styled.div`
   margin-bottom: 4rem !important;
+  display: flex;
 `
 
 const ActInfoContainer = styled.div`

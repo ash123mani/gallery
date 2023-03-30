@@ -6,6 +6,7 @@ const Content = styled.div`
   margin: 0rem 15rem;
   overflow: auto;
   border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
 
   @media only screen and (max-width: 1300px) {
     margin: 0rem 2rem;

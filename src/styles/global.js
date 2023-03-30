@@ -6,7 +6,6 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     width: 100%;
     height: 100%;
-    /* background: #073535; */
     font-family: 'Poppins', sans-serif;
     color: rgba(var(--color-primary), 1);
     font-size: 62.5%;

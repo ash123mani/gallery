@@ -31,7 +31,6 @@ const ColorStyles = createGlobalStyle`
 
   --border: #fff;
 
-  --color-primary: #000000;
   --f-dark-white: #ffffff;
 
   --f-transparent: transparent;

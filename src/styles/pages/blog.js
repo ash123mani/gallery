@@ -55,8 +55,7 @@ const ButtonWrapper = styled.div`
 `
 
 const cuCss = css`
-  margin-bottom: 2.4rem;
-  border: 1px solid transparent;
+  margin-bottom: 0.4rem;
 `
 
 const RightContentContainer = styled.div`

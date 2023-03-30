@@ -25,9 +25,7 @@ const Layout = ({ children }) => {
     <React.Fragment>
       <ThemeProvider theme={theme}>
         <Styles />
-        <div>
-          <Menu hideLinks={hideLinks} />
-        </div>
+        <Menu hideLinks={hideLinks} />
         <Content>{children}</Content>
         <Footer infoArr={infoArr} />
       </ThemeProvider>

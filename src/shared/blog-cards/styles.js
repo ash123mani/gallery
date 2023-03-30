@@ -14,11 +14,14 @@ const StyledLink = styled(Link)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border-bottom: 1px solid var(--border-color);
 
   &:hover {
     box-shadow: 6px 6px 15px rgba(74, 82, 44, 0.5);
-    border: 1px solid var(--border-color);
-    border-left: unset;
+  }
+
+  &:first-of-type:hover {
+    border-top: 1px solid var(--border-color);
   }
 
   @media only screen and (max-width: 768px) {
@@ -37,22 +40,23 @@ const MetaInfo = styled.div`
   }
 `
 
-const InfoContainer = styled.div`
+const InfoContainer = styled.article`
   opacity: 1;
 `
 
 const Info = styled.p`
   color: var(--color-primary-light);
   font-size: 1.6rem;
+  line-height: initial;
   font-weight: 500;
 `
 
-const Title = styled.h1`
+const Title = styled.h2`
   color: var(--color-primary);
   font-size: 3.2rem;
   width: 100%;
   word-wrap: break-word;
-  line-height: 1.3;
+  line-height: initial;
   font-weight: 500;
 
   @media only screen and (max-width: 768px) {
@@ -63,6 +67,7 @@ const Description = styled.h3`
   color: var(--color-primary-medium);
   font-size: 2rem;
   margin-top: 1.6rem;
+  line-height: initial;
 `
 
 export { Title, InfoContainer, Info, StyledLink, MetaInfo, Description }

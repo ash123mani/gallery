@@ -12,15 +12,7 @@ const Menu = ({ hideLinks }) => {
       <LogoContainer>
         <NewLogo />
       </LogoContainer>
-      {!hideLinks && (
-        <p>
-          {/* <Navigator to="/gallery">Gallery</Navigator> */}
-          {/* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */}
-          {/* <Navigator to="/blog">Perspective</Navigator> */}
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <Navigator to="/contact">Say Hi/🙏</Navigator>
-        </p>
-      )}
+      {!hideLinks && <Navigator to="/contact">Say Hi/🙏</Navigator>}
     </Container>
   )
 }

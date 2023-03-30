@@ -5,11 +5,12 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   font-weight: 500;
   padding: 8px 16px;
+  background: var(--button-background);
+  color: var(--f-dark-white) !important;
 
   &:hover {
-    color: var(--f-dark-white) !important;
-    background: var(--button-background);
     transition: all 0.5s ease-in-out;
+    color: var(--color-primary);
   }
 
   ${({ hollow }) =>
@@ -29,9 +30,10 @@ const defaultStyles = css`
   color: var(--color-primary);
   font-size: 1.8rem;
   max-height: 80px;
-  min-height: 40px;
-  line-height: 40px;
-  text-align: center;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @media only screen and (max-width: 768px) {
     font-size: 1.4rem;

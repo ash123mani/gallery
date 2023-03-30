@@ -19,13 +19,14 @@ const Container = styled.section`
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  padding: 0rem 15rem;
-  width: 100%;
+  margin: 0rem 15rem;
   align-items: center;
   height: 170px;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
 
   @media only screen and (max-width: 1300px) {
-    padding: 2rem;
+    margin: 0 2rem;
     height: 80px;
   }
 `
@@ -37,16 +38,6 @@ const LogoContainer = styled.div`
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-direction: alternate; */
-
-  &:after {
-    content: '';
-    position: absolute;
-    height: 170px;
-    width: 1px;
-    background: var(--border-color);
-    left: 0px;
-    top: -60px;
-  }
 `
 
 export { Container, LogoContainer }
