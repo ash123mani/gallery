@@ -13,6 +13,7 @@ const Container = styled.div`
   border: 1px solid var(--border-color);
   border-left: unset;
   background-color: var(--color-primary);
+  border-radius: 2px;
 
   &:hover {
     background-color: var(--color-primary);

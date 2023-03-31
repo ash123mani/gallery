@@ -15,8 +15,6 @@ export const fadeInUp = keyframes`
 export const Article = styled.p`
   font-size: 0rem;
   color: #0e0000e0;
-  /* margin: 16px 0px; */
-  /* font-weight: 500; */
   transition: font-size 2s;
   font-size: 1.8rem;
   width: 100%;

@@ -1,19 +1,4 @@
-import styled, { keyframes } from 'styled-components'
-
-const flag = keyframes`
-  0% {
-    transform: rotateY(0deg);
-    transform-origin: left 0px;
-  }
-  50% {
-    transform: rotateY(-45deg);
-    transform-origin: left 0px;
-  }
-  100% {
-    transform: rotateY(45deg);
-    transform-origin: left 0px;
-  }
-`
+import styled from 'styled-components'
 
 const Container = styled.section`
   display: flex;
@@ -21,7 +6,7 @@ const Container = styled.section`
   flex-direction: row;
   margin: 0rem 15rem;
   align-items: center;
-  height: 170px;
+  height: 120px;
   border-left: 1px solid var(--border-color);
   border-right: 1px solid var(--border-color);
 
@@ -33,11 +18,11 @@ const Container = styled.section`
 
 const LogoContainer = styled.div`
   position: relative;
-  /* animation-name: ${flag};
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-direction: alternate; */
 `
 
-export { Container, LogoContainer }
+const RightContent = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+export { Container, LogoContainer, RightContent }

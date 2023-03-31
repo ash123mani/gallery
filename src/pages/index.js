@@ -4,12 +4,19 @@ import { graphql } from 'gatsby'
 
 import SEO from '../components/SEO'
 import BlogCard from '../shared/blog-cards'
+import SelectView from '../shared/select-view'
 
-import { Wrapper, BlogCards, cuCss } from '../styles/pages/blog'
+import { Wrapper, BlogCards, cuCss, ViewContainer } from '../styles/pages/blog'
 
 const BlogPage = ({ data }) => {
   const [selectedCategory] = useState('all')
+  const [view, setView] = useState('grid')
+
   const contentfulBlogPosts = data.allContentfulBlogPosts.edges
+
+  const onViewChange = view => {
+    setView(view)
+  }
 
   const renderRightContent = () => {
     return (
@@ -44,8 +51,12 @@ const BlogPage = ({ data }) => {
     <>
       <SEO />
       <Wrapper>
-        {/* <Title>Explore falak...</Title> */}
-        <BlogCards id="bottom">{renderRightContent()}</BlogCards>
+        <ViewContainer>
+          <SelectView removeBorder="right" onViewChange={onViewChange} selectedView={view} />
+        </ViewContainer>
+        <BlogCards id="bottom" view={view}>
+          {renderRightContent()}
+        </BlogCards>
       </Wrapper>
     </>
   )

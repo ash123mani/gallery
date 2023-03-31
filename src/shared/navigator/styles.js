@@ -7,6 +7,7 @@ const StyledLink = styled(Link)`
   padding: 8px 16px;
   background: var(--button-background);
   color: var(--f-dark-white) !important;
+  border-radius: 2px;
 
   &:hover {
     transition: all 0.5s ease-in-out;
