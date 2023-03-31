@@ -25,8 +25,10 @@ const StyledLink = styled(Link)`
   }
 
   @media only screen and (max-width: 768px) {
-    margin-bottom: 1.2rem !important;
-    border: none !important;
+    border: unset;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.2rem;
   }
 `
 
@@ -36,7 +38,7 @@ const MetaInfo = styled.div`
   margin-top: 2.4rem;
 
   @media only screen and (max-width: 768px) {
-    margin-top: 1.6rem;
+    margin-top: 1.2rem;
   }
 `
 
@@ -46,26 +48,22 @@ const InfoContainer = styled.article`
 
 const Info = styled.p`
   color: var(--color-primary-light);
-  font-size: 1.6rem;
   font-weight: 500;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 12px;
+  }
 `
 
 const Title = styled.h2`
   color: var(--color-primary);
-  font-size: 3.2rem;
   width: 100%;
   word-wrap: break-word;
   font-weight: 500;
-
-  @media only screen and (max-width: 768px) {
-    font-size: 2.8rem;
-  }
 `
 const Description = styled.h3`
   color: var(--color-primary-medium);
-  font-size: 2rem;
   margin-top: 1.6rem;
-  line-height: 1.4;
   ${clampText};
 `
 

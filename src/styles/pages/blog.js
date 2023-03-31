@@ -49,7 +49,7 @@ const BlogCards = styled.section`
 `
 
 const cuCss = css`
-  margin-bottom: 0.4rem;
+  margin-bottom: 1.2rem;
 `
 
 const ViewContainer = styled.div`

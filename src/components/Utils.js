@@ -13,10 +13,7 @@ export const fadeInUp = keyframes`
 `
 
 export const Article = styled.p`
-  font-size: 0rem;
   color: #0e0000e0;
-  transition: font-size 2s;
-  font-size: 1.8rem;
   width: 100%;
 
   ${({ animate }) => {
@@ -46,10 +43,6 @@ export const Title = styled.h1`
           animation: unset;
         `
   }};
-
-  @media only screen and (max-width: 768px) {
-    font-size: 3.2rem;
-  }
 `
 
 export const Divider = styled.div`

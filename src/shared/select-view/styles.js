@@ -15,7 +15,6 @@ const StyledImage = styled.img`
   cursor: pointer;
 `
 
-const View = styled.div`
-  font-size: 1.8rem;
-`
+const View = styled.div``
+
 export { View, ImageContainer, StyledImage }

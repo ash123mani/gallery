@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 const Conatiner = styled.section`
-  font-size: 1.8rem;
   background-color: var(--color-primary);
   padding: 10rem 15rem;
 

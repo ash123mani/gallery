@@ -43,21 +43,21 @@ const StyledLink = styled.a`
 `
 
 const Text = styled.p`
-  font-size: 2.8rem;
+  // font-size: 2.8rem;
   color: var(--color-primary);
   font-weight: bold;
 
   @media only screen and (max-width: 768px) {
-    font-size: 2.4rem;
+    // font-size: 2.4rem;
   }
 `
 
 const Subtitle = styled.p`
-  font-size: 2.4rem;
+  // font-size: 2.4rem;
   color: var(--color-primary);
 
   @media only screen and (max-width: 768px) {
-    font-size: 1.8rem;
+    // font-size: 1.8rem;
   }
 `
 

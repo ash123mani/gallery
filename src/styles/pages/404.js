@@ -24,7 +24,6 @@ const Title = styled.h1`
 `
 
 const StyledLink = styled(Link)`
-  font-size: 24px;
   border: 1px solid black;
   padding: 12px 16px;
   color: var(--primary-color);

@@ -23,22 +23,18 @@ const StyledLink = styled(Link)`
     `};
 
   @media only screen and (max-width: 768px) {
+    height: 40px;
     padding: 8px 12px;
   }
 `
 
 const defaultStyles = css`
   color: var(--color-primary);
-  font-size: 1.8rem;
   max-height: 80px;
   height: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  @media only screen and (max-width: 768px) {
-    font-size: 1.4rem;
-  }
 `
 
 const defaultActiveStyles = {
