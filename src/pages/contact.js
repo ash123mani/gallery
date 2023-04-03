@@ -1,52 +1,70 @@
 import React from 'react'
 import { object } from 'prop-types'
 import { graphql } from 'gatsby'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
-import LandingLayout from '../shared/landing-layout'
-import ContactInfo from '../components/contact/contact-info'
 import SEO from '../components/SEO'
-import { infoArr } from '../config/contactInfo'
+import options from '../components/blogElements/BlogElements'
+import { SectionInMiddle } from '../components/Utils'
+import Badge from '../shared/badge'
 
-import { Wrapper } from '../styles/pages/contact'
+import {
+  Wrapper,
+  AllBadges,
+  BadgeRow,
+  BadgesContainer,
+  StyledTitle,
+  TechTitle,
+} from '../styles/pages/contact'
 
 const Contact = ({ data }) => {
-  const blogHome = data.contentfulContact
+  console.log('data', data)
+
+  const {
+    contentfulAbout: { mySummary, experienceSummary },
+    seoTitle,
+  } = data
+  const { title: exTitle, items } = experienceSummary
 
   return (
     <>
-      <SEO
-        image={blogHome.heroImage.fluid.src}
-        title={blogHome.seoTitle}
-        description={blogHome.seoDescription}
-      />
+      <SEO title={seoTitle} />
       <Wrapper>
-        <section>
-          <LandingLayout
-            title="Never hesitate to say a Hi/🙏 !!"
-            body="On Falak we never ever left any hi unHied, we read every message."
-            rightContent={() => <ContactInfo infoArr={infoArr} />}
-          />
-        </section>
+        <SectionInMiddle>{documentToReactComponents(mySummary.json, options)}</SectionInMiddle>
+        <SectionInMiddle>
+          <StyledTitle as="h2">{exTitle}</StyledTitle>
+          <AllBadges>
+            {items.map(({ title, tags }) => {
+              return (
+                <BadgeRow key={title}>
+                  <TechTitle>{title}</TechTitle>
+                  <BadgesContainer>
+                    {tags.map(tag => (
+                      <Badge key={tag}>{tag}</Badge>
+                    ))}
+                  </BadgesContainer>
+                </BadgeRow>
+              )
+            })}
+          </AllBadges>
+        </SectionInMiddle>
       </Wrapper>
     </>
   )
 }
 
 export const query = graphql`
-  query Contact {
-    contentfulContact {
-      title
-      subtitle {
-        subtitle
+  query About {
+    contentfulAbout {
+      seoTitle
+      mySummary {
+        json
       }
-      heroImage {
+      experienceSummary {
         title
-        fluid(quality: 65, maxHeight: 200) {
-          ...GatsbyContentfulFluid_withWebp
-        }
-        ogimg: fluid(maxWidth: 900, quality: 50) {
-          ...GatsbyContentfulFluid_withWebp
-          src
+        items {
+          title
+          tags
         }
       }
     }

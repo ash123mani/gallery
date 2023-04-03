@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components'
 const ColorStyles = createGlobalStyle`
   :root {
     --color-primary: #000;
-    --color-primary-medium: #000000a3;
+    --color-primary-medium: #000000ab;
     --color-primary-light: #0000006e;
 
     --code-block: #f5f5f5;
@@ -34,6 +34,10 @@ const ColorStyles = createGlobalStyle`
   --f-dark-white: #ffffff;
 
   --f-transparent: transparent;
+
+  --border-radius-primary: 6px;
+  --border-radius-medium: 4px;
+  --border-radius-small: 2px;
   }
 `
 

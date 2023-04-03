@@ -63,6 +63,7 @@ const Title = styled.h2`
 `
 const Description = styled.h3`
   color: var(--color-primary-medium);
+  font-weight: normal;
   margin-top: 1.6rem;
   ${clampText};
 `

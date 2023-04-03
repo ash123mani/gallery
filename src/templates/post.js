@@ -69,7 +69,7 @@ const Blogs = ({ data }) => {
       />
       <Wrapper>
         <HeadingContainer>
-          <Title backgroundColor="#38332e" style={{ margin: '0rem' }}>
+          <Title as="h1" backgroundColor="#38332e" style={{ margin: '0rem' }}>
             {post.homepage}
           </Title>
           <CommomDivider />

@@ -13,7 +13,6 @@ export const fadeInUp = keyframes`
 `
 
 export const Article = styled.p`
-  color: #0e0000e0;
   width: 100%;
 
   ${({ animate }) => {
@@ -27,22 +26,11 @@ export const Article = styled.p`
   }}
 `
 
-export const Title = styled.h1`
+export const Title = styled.p`
   width: 100%;
   font-weight: bold;
-  color: var(--color-primary);
   padding: 2rem 0rem;
   width: 100%;
-
-  ${({ animate }) => {
-    return animate
-      ? css`
-          animation: 0.5s ${fadeInUp} ease-in-out;
-        `
-      : css`
-          animation: unset;
-        `
-  }};
 `
 
 export const Divider = styled.div`
@@ -50,4 +38,14 @@ export const Divider = styled.div`
   height: ${({ height }) => height || '1px'};
   width: ${({ width }) => width || '100%'};
   background: ${({ bgColor }) => bgColor || 'var(--border-color)'};
+`
+
+export const SectionInMiddle = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 0 10rem;
 `

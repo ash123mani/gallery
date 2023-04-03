@@ -49,6 +49,8 @@ const Falak = styled.p`
   }
 `
 
-const StyledLink = styled(Link)``
+const StyledLink = styled(Link)`
+  text-decoration: none;
+`
 
 export { StyledLink, Falak, Container }

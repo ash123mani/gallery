@@ -142,11 +142,15 @@ module.exports = {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         displayName: true,
-        ssr: true,
       },
     },
   ],
   flags: {
     DEV_SSR: true,
+    FAST_DEV: true, // Enable all experiments aimed at improving develop server start time
+    PRESERVE_WEBPACK_CACHE: true, // Don't delete webpack's cache when changing gatsby-node.js & gatsby-config.js files.
+    FAST_REFRESH: true,
+    PARALLEL_SOURCING: true, // Run all source plugins at the same time instead of serially. For sites with multiple source plugins, this can speedup sourcing and transforming considerably.
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
   },
 }

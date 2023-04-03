@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components'
 const GlobalStyles = createGlobalStyle`
   * {
     font-size: 16px;
-    line-height: 1.75;
+    line-height: 1.3;
   }
 
   html,
@@ -12,7 +12,7 @@ const GlobalStyles = createGlobalStyle`
     width: 100%;
     height: 100%;
     font-family: 'Poppins', sans-serif;
-    color: rgba(var(--color-primary), 1);
+
     font-size: 62.5%;
     line-height: 1.75;
     font-variant-ligatures: none;
@@ -33,9 +33,7 @@ const GlobalStyles = createGlobalStyle`
   h4,
   h5 {
     font-family: "Poppins";
-    font-weight: 400;
     margin-bottom: 0;
-    color: #0000;
   }
 
   h1 {
@@ -77,7 +75,6 @@ const GlobalStyles = createGlobalStyle`
   }
 
   a {
-    text-decoration: none;
     font-size: 16px;
     line-height: 28px;
   }
