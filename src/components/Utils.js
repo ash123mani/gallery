@@ -48,4 +48,8 @@ export const SectionInMiddle = styled.section`
   height: 100%;
   width: 100%;
   padding: 0 10rem;
+
+  @media only screen and (max-width: 768px) {
+    padding: 0 2rem;
+  }
 `

@@ -7,14 +7,17 @@ const Wrapper = styled.div`
   overflow: auto;
 
   @media only screen and (max-width: 768px) {
-    & {
-      height: calc(100vh - 80px);
-      padding: 0 2rem;
-    }
+    height: calc(100vh - 100px);
   }
 `
 
-const AllBadges = styled.div``
+const AllBadges = styled.div`
+  overflow: auto;
+
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+`
 
 const BadgeRow = styled.div`
   margin: 2.4rem 0;

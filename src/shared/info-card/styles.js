@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Link } from 'gatsby'
 
 const Container = styled.div`
@@ -7,6 +7,10 @@ const Container = styled.div`
   flex-wrap: wrap;
   gap: 20px;
   width: 100%;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 
 const RichInfo = styled.div`
@@ -15,8 +19,15 @@ const RichInfo = styled.div`
 
 const ImageContainer = styled.div`
   flex: 1;
+
+  @media only screen and (max-width: 768px) {
+    & .gatsby-image-wrapper {
+      height: 140px !important;
+      margin-bottom: 2rem;
+    }
+  }
 `
-const KnowMore = styled(Link)`
+const knowMoreCss = css`
   text-decoration: none;
   border: 1px solid var(--border-color);
   padding: 0.4rem 1.8rem;
@@ -26,5 +37,20 @@ const KnowMore = styled(Link)`
     color: initial;
   }
 `
+const KnowMoreFirst = styled(Link)`
+  ${knowMoreCss};
 
-export { Container, RichInfo, ImageContainer, KnowMore }
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+`
+
+const KnowMoreSecond = styled(Link)`
+  ${knowMoreCss};
+
+  @media only screen and (min-width: 768px) {
+    display: none;
+  }
+`
+
+export { Container, RichInfo, ImageContainer, KnowMoreFirst, KnowMoreSecond }

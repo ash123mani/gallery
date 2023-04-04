@@ -6,7 +6,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 import options from '../../components/blogElements/BlogElements'
 
-import { Container, RichInfo, ImageContainer, KnowMore } from './styles'
+import { Container, RichInfo, ImageContainer, KnowMoreFirst, KnowMoreSecond } from './styles'
 
 const InfoCard = ({ richTextJson, imageSrc, knowMoreText, redirectUrl }) => {
   const { fluid, title } = imageSrc
@@ -14,10 +14,11 @@ const InfoCard = ({ richTextJson, imageSrc, knowMoreText, redirectUrl }) => {
     <Container>
       <RichInfo>
         {documentToReactComponents(richTextJson, options)}
-        {redirectUrl && <KnowMore to={redirectUrl}>{knowMoreText}</KnowMore>}
+        {redirectUrl && <KnowMoreFirst to={redirectUrl}>{knowMoreText}</KnowMoreFirst>}
       </RichInfo>
       <ImageContainer>
         <Img fluid={fluid} title={title} alt={title} objectFit />
+        {redirectUrl && <KnowMoreSecond to={redirectUrl}>{knowMoreText}</KnowMoreSecond>}
       </ImageContainer>
     </Container>
   )
