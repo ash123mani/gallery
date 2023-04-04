@@ -7,7 +7,7 @@ const BlogCard = React.forwardRef((props, ref) => {
   const { blogPosts, slug, tag, publishDate, title, excerpt, ...restProps } = props
 
   return (
-    <StyledLink to={blogPosts ? `/blog${slug}/` : `${slug}/`} ref={ref} {...restProps}>
+    <StyledLink to={blogPosts ? `/blog${slug}` : `${slug}`} ref={ref} {...restProps}>
       <InfoContainer>
         <Title>{title}</Title>
         <Description>{excerpt}</Description>

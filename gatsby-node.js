@@ -47,7 +47,7 @@ exports.createPages = ({ graphql, actions }) => {
       const posts = result.data.allContentfulBlogPosts.edges
       posts.map(({ node }) => {
         createPage({
-          path: `/blog${node.slug}/`,
+          path: `/blog${node.slug}`,
           component: path.resolve(`./src/templates/post.js`),
           context: {
             slug: node.slug,
@@ -59,5 +59,36 @@ exports.createPages = ({ graphql, actions }) => {
   })
 
   // eslint-disable-next-line no-undef
-  return Promise.all([loadPosts])
+  const loadAboutPageInfoCards = new Promise(resolve => {
+    graphql(`
+      query {
+        allContentfulAbout {
+          edges {
+            node {
+              workExperience {
+                redirectUrl
+              }
+            }
+          }
+        }
+      }
+    `).then(result => {
+      const infoCards = result.data.allContentfulAbout.edges
+      infoCards.map(({ node: { workExperience } }) => {
+        workExperience.map(exp => {
+          createPage({
+            path: `/about${exp.redirectUrl}`,
+            component: path.resolve(`./src/templates/about-details.js`),
+            context: {
+              slug: exp.redirectUrl,
+            },
+          })
+        })
+      })
+      resolve()
+    })
+  })
+
+  // eslint-disable-next-line no-undef
+  return Promise.all([loadPosts, loadAboutPageInfoCards])
 }

@@ -44,7 +44,7 @@ export const SectionInMiddle = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   height: 100%;
   width: 100%;
   padding: 0 10rem;

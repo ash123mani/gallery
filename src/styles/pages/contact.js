@@ -4,6 +4,7 @@ import { Title } from '../../components/Utils'
 const Wrapper = styled.div`
   height: calc(100vh - 70px);
   width: 100%;
+  overflow: auto;
 
   @media only screen and (max-width: 768px) {
     & {

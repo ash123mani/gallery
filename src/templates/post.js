@@ -58,7 +58,6 @@ const PostSection = styled.section`
 
 const Blogs = ({ data }) => {
   const post = data.contentfulBlogPosts
-  console.log('post', post)
 
   return (
     <>
