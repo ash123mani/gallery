@@ -3,8 +3,8 @@ import styled, { css } from 'styled-components'
 const Wrapper = styled.div`
   width: 100%;
   margin-bottom: 16rem;
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex;
+  flex-wrap: wrap; */
   /* justify-content: flex-start; */
   overflow: auto;
   -moz-osx-font-smoothing: grayscale;
@@ -30,6 +30,7 @@ const gridCss = ({ view }) => {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 20px;
+      grid-template-rows: 420px;
     `
   )
 }
@@ -37,7 +38,6 @@ const gridCss = ({ view }) => {
 const BlogCards = styled.section`
   flex-wrap: wrap;
   justify-content: flex-start;
-  width: 100%;
   margin: 2rem;
   ${gridCss};
 
@@ -54,6 +54,7 @@ const cuCss = css`
 
 const ViewContainer = styled.div`
   margin-left: auto;
+  width: fit-content;
 
   @media only screen and (max-width: 768px) {
     display: none;

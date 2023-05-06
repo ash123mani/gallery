@@ -6,33 +6,33 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import SEO from '../components/SEO'
 import options from '../components/blogElements/BlogElements'
 import { SectionInMiddle } from '../components/Utils'
-// import Badge from '../shared/badge'
+import Badge from '../shared/badge'
 import InfoCard from '../shared/info-card'
 
 import {
   Wrapper,
-  // AllBadges,
-  // BadgeRow,
-  // BadgesContainer,
-  // StyledTitle,
-  // TechTitle,
+  AllBadges,
+  BadgeRow,
+  BadgesContainer,
+  StyledTitle,
+  TechTitle,
 } from '../styles/pages/contact'
 
 const Contact = ({ data }) => {
   const scrollRestoration = useScrollRestoration(`page-contact`)
 
   const {
-    contentfulAbout: { mySummary, workExperience },
+    contentfulAbout: { mySummary, workExperience, experienceSummary },
     seoTitle,
   } = data
-  // const { title: exTitle, items } = experienceSummary
+  const { title: exTitle, items } = experienceSummary
 
   return (
     <>
       <SEO title={seoTitle} />
       <Wrapper {...scrollRestoration}>
         <SectionInMiddle>{documentToReactComponents(mySummary.json, options)}</SectionInMiddle>
-        {/* <SectionInMiddle>
+        <SectionInMiddle>
           <StyledTitle as="h2">{exTitle}</StyledTitle>
           <AllBadges>
             {items.map(({ title, tags }) => {
@@ -48,7 +48,7 @@ const Contact = ({ data }) => {
               )
             })}
           </AllBadges>
-        </SectionInMiddle> */}
+        </SectionInMiddle>
         {workExperience.map(exp => {
           const {
             info: { json: workExpRichJson },

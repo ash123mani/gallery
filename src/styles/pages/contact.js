@@ -14,13 +14,17 @@ const Wrapper = styled.div`
 const AllBadges = styled.div`
   overflow: auto;
 
-  @media only screen and (max-width: 768px) {
+  /* @media only screen and (max-width: 768px) {
     display: none;
-  }
+  } */
 `
 
 const BadgeRow = styled.div`
-  margin: 2.4rem 0;
+  margin: 4rem 0;
+
+  @media only screen and (max-width: 768px) {
+    margin: 2rem 0;
+  }
 `
 
 const BadgesContainer = styled.div`

@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components'
 const GlobalStyles = createGlobalStyle`
   * {
     font-size: 16px;
-    line-height: 1.3;
+    line-height: 1.4;
   }
 
   html,
@@ -38,27 +38,27 @@ const GlobalStyles = createGlobalStyle`
 
   h1 {
     font-size: 3.052rem;
-    line-height: 1.3;
+    line-height: 1.4;
   }
 
   h2 {
     font-size: 2.441rem;
-    line-height: 1.3;
+    line-height: 1.4;
   }
 
   h3 {
     font-size: 1.953rem;
-    line-height: 1.3;
+    line-height: 1.4;
   }
 
   h4 {
     font-size: 1.563rem;
-    line-height: 1.3;
+    line-height: 1.4;
   }
 
   h5, h6 {
     font-size: 1.25em;
-    line-height: 1.3;
+    line-height: 1.4;
   }
 
 
@@ -71,7 +71,6 @@ const GlobalStyles = createGlobalStyle`
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    line-height: 28px;
   }
 
   a {
@@ -86,27 +85,27 @@ const GlobalStyles = createGlobalStyle`
   @media screen and (max-width: 768px) {
     h1 {
     font-size: 1.802rem;
-    line-height: 1.3;
+    line-height: 1.4;
   }
 
   h2 {
     font-size: 1.602rem;
-    line-height: 1.3;
+    line-height: 1.4;
   }
 
   h3 {
     font-size: 1.424rem;
-    line-height: 1.3;
+    line-height: 1.4;
   }
 
   h4 {
     font-size: 1.266rem;
-    line-height: 1.3;
+    line-height: 1.4;
   }
 
   h5, h6 {
     font-size: 1.125em;
-    line-height: 1.3;
+    line-height: 1.4;
   }
   }
 `

@@ -41,15 +41,10 @@ export const Divider = styled.div`
 `
 
 export const SectionInMiddle = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /* align-items: center; */
-  height: 100%;
-  width: 100%;
-  padding: 0 10rem;
+  padding: 4rem 10rem;
+  border-bottom: 1px solid var(--border-color);
 
   @media only screen and (max-width: 768px) {
-    padding: 0 2rem;
+    padding: 2rem;
   }
 `

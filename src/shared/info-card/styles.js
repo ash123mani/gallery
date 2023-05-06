@@ -14,11 +14,15 @@ const Container = styled.div`
 `
 
 const RichInfo = styled.div`
-  flex: 1;
+  flex: 1.5;
 `
 
 const ImageContainer = styled.div`
   flex: 1;
+
+  & .gatsby-image-wrapper {
+    height: 320px !important;
+  }
 
   @media only screen and (max-width: 768px) {
     & .gatsby-image-wrapper {
@@ -28,10 +32,10 @@ const ImageContainer = styled.div`
   }
 `
 const knowMoreCss = css`
-  text-decoration: none;
-  border: 1px solid var(--border-color);
-  padding: 0.4rem 1.8rem;
-  color: var(--color-primary-medium);
+  /* text-decoration: none; */
+  /* border: 1px solid var(--border-color); */
+  /* padding: 0.4rem 1.8rem; */
+  /* color: var(--color-primary-medium); */
 
   &:hover {
     color: initial;

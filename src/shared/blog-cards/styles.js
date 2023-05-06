@@ -15,6 +15,7 @@ const StyledLink = styled(Link)`
   justify-content: space-between;
   border: 1px solid var(--border-color);
   height: auto;
+  /* min-height: 400px; */
 
   &:hover {
     box-shadow: 6px 6px 15px rgba(74, 82, 44, 0.5);
@@ -26,9 +27,10 @@ const StyledLink = styled(Link)`
 
   @media only screen and (max-width: 768px) {
     border: unset;
-    border-top: 1px solid var(--border-color);
+    /* border-top: 1px solid var(--border-color); */
     border-bottom: 1px solid var(--border-color);
     padding: 1.2rem;
+    min-height: 200px;
   }
 `
 

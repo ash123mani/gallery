@@ -17,7 +17,7 @@ const InfoCard = ({ richTextJson, imageSrc, knowMoreText, redirectUrl }) => {
         {redirectUrl && <KnowMoreFirst to={redirectUrl}>{knowMoreText}</KnowMoreFirst>}
       </RichInfo>
       <ImageContainer>
-        <Img fluid={fluid} title={title} alt={title} objectFit />
+        <Img fluid={fluid} title={title} alt={title} objectFit="contain" />
         {redirectUrl && <KnowMoreSecond to={redirectUrl}>{knowMoreText}</KnowMoreSecond>}
       </ImageContainer>
     </Container>

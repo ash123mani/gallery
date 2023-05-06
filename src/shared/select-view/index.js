@@ -14,7 +14,7 @@ const SelectView = ({ removeBorder, onViewChange, selectedView }) => {
 
   return (
     <ImageContainer removeBorder={removeBorder}>
-      <View>Your View</View>
+      <View>Change View</View>
 
       <StyledImage
         src={isGridSelected ? gridSelected : grid}

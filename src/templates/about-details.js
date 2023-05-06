@@ -30,18 +30,23 @@ const AboutDeatils = ({ data, pathContext }) => {
             id,
             redirectUrl,
             knowMoreText,
+            cardIdUsedForNavigation,
           } = exp
+          console.log('cardIdUsedForNavigation', cardIdUsedForNavigation)
 
           const fImage = imageSrc[0]
           return (
-            <SectionInMiddle key={id}>
-              <InfoCard
-                richTextJson={workExpRichJson}
-                imageSrc={fImage}
-                redirectUrl={redirectUrl}
-                knowMoreText={knowMoreText}
-              />
-            </SectionInMiddle>
+            <>
+              <span id={cardIdUsedForNavigation}></span>
+              <SectionInMiddle key={id}>
+                <InfoCard
+                  richTextJson={workExpRichJson}
+                  imageSrc={fImage}
+                  redirectUrl={redirectUrl}
+                  knowMoreText={knowMoreText}
+                />
+              </SectionInMiddle>
+            </>
           )
         })}
       </Wrapper>
@@ -68,6 +73,7 @@ export const aboutDetails = graphql`
             ...GatsbyContentfulFluid_tracedSVG
           }
         }
+        cardIdUsedForNavigation
       }
     }
   }

@@ -32,7 +32,7 @@ const options = {
     [BLOCKS.OL_LIST]: (node, children) => <List>{children}</List>,
     [BLOCKS.UL_LIST]: (node, children) => <List as="ul">{children}</List>,
     [INLINES.HYPERLINK]: (node, children) => (
-      <A target="_blank" href={node.data.uri}>
+      <A target={node.data.uri.startsWith('#') ? '_self' : '_blank'} href={node.data.uri}>
         {children}
       </A>
     ),
