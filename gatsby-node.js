@@ -76,13 +76,14 @@ exports.createPages = ({ graphql, actions }) => {
       const infoCards = result.data.allContentfulAbout.edges
       infoCards.map(({ node: { workExperience } }) => {
         workExperience.map(exp => {
-          createPage({
-            path: `/about${exp.redirectUrl}`,
-            component: path.resolve(`./src/templates/about-details.js`),
-            context: {
-              slug: exp.redirectUrl,
-            },
-          })
+          !!exp.redirectUrl &&
+            createPage({
+              path: `/about${exp.redirectUrl}`,
+              component: path.resolve(`./src/templates/about-details.js`),
+              context: {
+                slug: exp.redirectUrl,
+              },
+            })
         })
       })
       resolve()
