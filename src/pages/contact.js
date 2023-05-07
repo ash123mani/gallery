@@ -69,6 +69,7 @@ const Contact = ({ data }) => {
                 redirectUrl={`/about${redirectUrl}`}
                 knowMoreText={knowMoreText}
                 direction={direction}
+                showRedirect={!!redirectUrl}
               />
             </SectionInMiddle>
           )

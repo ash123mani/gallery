@@ -1,5 +1,5 @@
 import React from 'react'
-import { object, string, oneOf } from 'prop-types'
+import { object, string, oneOf, bool } from 'prop-types'
 import Img from 'gatsby-image'
 // import Img from 'gatsby-image/withIEPolyfill'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
@@ -8,13 +8,20 @@ import options from '../../components/blogElements/BlogElements'
 
 import { Container, RichInfo, ImageContainer, KnowMoreFirst, KnowMoreSecond } from './styles'
 
-const InfoCard = ({ richTextJson, imageSrc, knowMoreText, redirectUrl, direction }) => {
+const InfoCard = ({
+  richTextJson,
+  imageSrc,
+  knowMoreText,
+  redirectUrl,
+  direction,
+  showRedirect,
+}) => {
   const { fluid, title } = imageSrc
   return (
     <Container direction={direction}>
       <RichInfo>
         {documentToReactComponents(richTextJson, options)}
-        {redirectUrl && <KnowMoreFirst to={redirectUrl}>{knowMoreText}</KnowMoreFirst>}
+        {showRedirect && <KnowMoreFirst to={redirectUrl}>{knowMoreText}</KnowMoreFirst>}
       </RichInfo>
       {(!!fluid || !!redirectUrl) && (
         <ImageContainer>
@@ -32,6 +39,7 @@ InfoCard.propTypes = {
   knowMoreText: string,
   redirectUrl: string,
   direction: oneOf[('reverse', 'row')],
+  showRedirect: bool,
 }
 
 InfoCard.defaultProps = {
@@ -39,6 +47,7 @@ InfoCard.defaultProps = {
   redirectUrl: '',
   direction: 'row',
   imageSrc: {},
+  bool: true,
 }
 
 export default InfoCard

@@ -34,18 +34,15 @@ const AboutDeatils = ({ data }) => {
           const direction = index % 2 === 0 ? 'row' : 'reverse'
           const fImage = (imageSrc || [])[0]
           return (
-            <>
-              <span id={cardIdUsedForNavigation}></span>
-              <SectionInMiddle key={id} id={cardIdUsedForNavigation}>
-                <InfoCard
-                  richTextJson={workExpRichJson}
-                  imageSrc={fImage}
-                  redirectUrl={redirectUrl}
-                  knowMoreText={knowMoreText}
-                  direction={direction}
-                />
-              </SectionInMiddle>
-            </>
+            <SectionInMiddle key={id} id={cardIdUsedForNavigation}>
+              <InfoCard
+                richTextJson={workExpRichJson}
+                imageSrc={fImage}
+                redirectUrl={redirectUrl}
+                knowMoreText={knowMoreText}
+                direction={direction}
+              />
+            </SectionInMiddle>
           )
         })}
       </Wrapper>
