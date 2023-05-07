@@ -26,7 +26,6 @@ const AboutDeatils = ({ data }) => {
             info: { json: workExpRichJson },
             imageSrc,
             id,
-            redirectUrl,
             knowMoreText,
             cardIdUsedForNavigation,
           } = exp
@@ -38,9 +37,9 @@ const AboutDeatils = ({ data }) => {
               <InfoCard
                 richTextJson={workExpRichJson}
                 imageSrc={fImage}
-                redirectUrl={redirectUrl}
                 knowMoreText={knowMoreText}
                 direction={direction}
+                showRedirect={false}
               />
             </SectionInMiddle>
           )
