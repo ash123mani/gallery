@@ -20,11 +20,7 @@ const AllBadges = styled.div`
 `
 
 const BadgeRow = styled.div`
-  margin: 4rem 0;
-
-  @media only screen and (max-width: 768px) {
-    margin: 2rem 0;
-  }
+  margin: 2.4rem 0;
 `
 
 const BadgesContainer = styled.div`

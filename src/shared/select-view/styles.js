@@ -6,7 +6,8 @@ const ImageContainer = styled.div`
   justify-content: center;
   border-radius: 2px;
   padding: 8px 12px;
-  border: 1px solid var(--color-primary-medium);
+  /* border: 1px solid var(--color-primary-medium); */
+  /* border-bottom: 1px solid var(--border-color); */
   ${({ removeBorder }) => `border-${removeBorder}: none`};
 `
 

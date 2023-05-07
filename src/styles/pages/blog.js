@@ -49,12 +49,19 @@ const BlogCards = styled.section`
 `
 
 const cuCss = css`
-  margin-bottom: 1.2rem;
+  margin: 4rem 0;
+
+  @media only screen and (max-width: 768px) {
+    margin: 0;
+  }
 `
 
 const ViewContainer = styled.div`
   margin-left: auto;
-  width: fit-content;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: right;
 
   @media only screen and (max-width: 768px) {
     display: none;

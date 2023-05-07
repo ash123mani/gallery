@@ -32,7 +32,7 @@ const AboutDeatils = ({ data }) => {
           } = exp
 
           const direction = index % 2 === 0 ? 'row' : 'reverse'
-          const fImage = imageSrc[0]
+          const fImage = (imageSrc || [])[0]
           return (
             <>
               <span id={cardIdUsedForNavigation}></span>

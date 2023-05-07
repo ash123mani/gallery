@@ -9,6 +9,7 @@ const Container = styled.section`
   height: 120px;
   border-left: 1px solid var(--border-color);
   border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 
   @media only screen and (max-width: 1300px) {
     margin: 0 2rem;
