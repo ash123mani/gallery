@@ -26,7 +26,7 @@ const InfoCard = ({
       {(!!fluid || !!redirectUrl) && (
         <ImageContainer>
           {fluid && <Img fluid={fluid} title={title} alt={title} objectFit="contain" />}
-          {redirectUrl && <KnowMoreSecond to={redirectUrl}>{knowMoreText}</KnowMoreSecond>}
+          {showRedirect && <KnowMoreSecond to={redirectUrl}>{knowMoreText}</KnowMoreSecond>}
         </ImageContainer>
       )}
     </Container>
