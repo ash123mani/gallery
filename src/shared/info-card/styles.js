@@ -3,13 +3,14 @@ import { Link } from 'gatsby'
 
 const Container = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: ${({ direction }) => (direction === 'row' ? 'row' : 'row-reverse')};
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 40px;
   width: 100%;
 
   @media only screen and (max-width: 768px) {
     flex-direction: column;
+    gap: 20px;
   }
 `
 
@@ -22,6 +23,10 @@ const ImageContainer = styled.div`
 
   & .gatsby-image-wrapper {
     height: 320px !important;
+
+    & img {
+      object-fit: fill !important;
+    }
   }
 
   @media only screen and (max-width: 768px) {

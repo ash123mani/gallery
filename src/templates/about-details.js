@@ -1,6 +1,6 @@
 import React from 'react'
 import { object, shape, string } from 'prop-types'
-import { graphql, useScrollRestoration } from 'gatsby'
+import { graphql } from 'gatsby'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 import SEO from '../components/SEO'
@@ -10,9 +10,7 @@ import InfoCard from '../shared/info-card'
 
 import { Wrapper } from '../styles/pages/contact'
 
-const AboutDeatils = ({ data, pathContext }) => {
-  const scrollRestoration = useScrollRestoration(`page-about-details-${pathContext.slug}`)
-
+const AboutDeatils = ({ data }) => {
   const {
     contentfulAboutDetails: { mainHeading, infoCards },
     seoTitle,
@@ -21,9 +19,9 @@ const AboutDeatils = ({ data, pathContext }) => {
   return (
     <>
       <SEO title={seoTitle} />
-      <Wrapper {...scrollRestoration}>
+      <Wrapper>
         <SectionInMiddle>{documentToReactComponents(mainHeading.json, options)}</SectionInMiddle>
-        {infoCards.map(exp => {
+        {infoCards.map((exp, index) => {
           const {
             info: { json: workExpRichJson },
             imageSrc,
@@ -32,18 +30,19 @@ const AboutDeatils = ({ data, pathContext }) => {
             knowMoreText,
             cardIdUsedForNavigation,
           } = exp
-          console.log('cardIdUsedForNavigation', cardIdUsedForNavigation)
 
+          const direction = index % 2 === 0 ? 'row' : 'reverse'
           const fImage = imageSrc[0]
           return (
             <>
               <span id={cardIdUsedForNavigation}></span>
-              <SectionInMiddle key={id}>
+              <SectionInMiddle key={id} id={cardIdUsedForNavigation}>
                 <InfoCard
                   richTextJson={workExpRichJson}
                   imageSrc={fImage}
                   redirectUrl={redirectUrl}
                   knowMoreText={knowMoreText}
+                  direction={direction}
                 />
               </SectionInMiddle>
             </>
@@ -68,7 +67,7 @@ export const aboutDetails = graphql`
         imageSrc {
           title
           description
-          fluid(maxWidth: 400, maxHeight: 400) {
+          fluid(maxWidth: 400, maxHeight: 320) {
             ...GatsbyContentfulFluid_withWebp
             ...GatsbyContentfulFluid_tracedSVG
           }

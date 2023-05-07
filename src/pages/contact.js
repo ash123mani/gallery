@@ -32,7 +32,7 @@ const Contact = ({ data }) => {
       <SEO title={seoTitle} />
       <Wrapper {...scrollRestoration}>
         <SectionInMiddle>{documentToReactComponents(mySummary.json, options)}</SectionInMiddle>
-        <SectionInMiddle>
+        <SectionInMiddle id="tools-and-technologies">
           <StyledTitle as="h2">{exTitle}</StyledTitle>
           <AllBadges>
             {items.map(({ title, tags }) => {
@@ -49,23 +49,26 @@ const Contact = ({ data }) => {
             })}
           </AllBadges>
         </SectionInMiddle>
-        {workExperience.map(exp => {
+        {workExperience.map((exp, index) => {
           const {
             info: { json: workExpRichJson },
             imageSrc,
             id,
             redirectUrl,
             knowMoreText,
+            cardIdUsedForNavigation,
           } = exp
 
-          const fImage = imageSrc[0]
+          const fImage = (imageSrc || [])[0]
+          const direction = index % 2 === 0 ? 'row' : 'reverse'
           return (
-            <SectionInMiddle key={id}>
+            <SectionInMiddle key={id} id={cardIdUsedForNavigation}>
               <InfoCard
                 richTextJson={workExpRichJson}
                 imageSrc={fImage}
                 redirectUrl={`/about${redirectUrl}`}
                 knowMoreText={knowMoreText}
+                direction={direction}
               />
             </SectionInMiddle>
           )
@@ -97,13 +100,14 @@ export const query = graphql`
         imageSrc {
           title
           description
-          fluid(maxWidth: 400, maxHeight: 400) {
+          fluid(maxWidth: 320, quality: 100) {
             ...GatsbyContentfulFluid
             ...GatsbyContentfulFluid_tracedSVG
           }
         }
         redirectUrl
         knowMoreText
+        cardIdUsedForNavigation
       }
     }
   }

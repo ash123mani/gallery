@@ -15,6 +15,8 @@ const StyledImage = styled.img`
   cursor: pointer;
 `
 
-const View = styled.div``
+const View = styled.div`
+  font-weight: 500;
+`
 
 export { View, ImageContainer, StyledImage }
