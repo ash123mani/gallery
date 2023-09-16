@@ -38,7 +38,7 @@ const gridCss = ({ view }) => {
 const BlogCards = styled.section`
   flex-wrap: wrap;
   justify-content: flex-start;
-  margin: 2rem;
+  margin: 2rem 8rem;
   ${gridCss};
 
   @media only screen and (max-width: 768px) {
