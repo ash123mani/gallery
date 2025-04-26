@@ -21,29 +21,30 @@ const AboutDeatils = ({ data }) => {
       <SEO title={seoTitle} />
       <Wrapper>
         <SectionInMiddle>{documentToReactComponents(mainHeading.json, options)}</SectionInMiddle>
-        {infoCards.map((exp, index) => {
-          const {
-            info: { json: workExpRichJson },
-            imageSrc,
-            id,
-            knowMoreText,
-            cardIdUsedForNavigation,
-          } = exp
+        {Array.isArray(infoCards) &&
+          infoCards.map((exp, index) => {
+            const {
+              info: { json: workExpRichJson },
+              imageSrc,
+              id,
+              knowMoreText,
+              cardIdUsedForNavigation,
+            } = exp
 
-          const direction = index % 2 === 0 ? 'row' : 'reverse'
-          const fImage = (imageSrc || [])[0]
-          return (
-            <SectionInMiddle key={id} id={cardIdUsedForNavigation}>
-              <InfoCard
-                richTextJson={workExpRichJson}
-                imageSrc={fImage}
-                knowMoreText={knowMoreText}
-                direction={direction}
-                showRedirect={false}
-              />
-            </SectionInMiddle>
-          )
-        })}
+            const direction = index % 2 === 0 ? 'row' : 'reverse'
+            const fImage = (imageSrc || [])[0]
+            return (
+              <SectionInMiddle key={id} id={cardIdUsedForNavigation}>
+                <InfoCard
+                  richTextJson={workExpRichJson}
+                  imageSrc={fImage}
+                  knowMoreText={knowMoreText}
+                  direction={direction}
+                  showRedirect={false}
+                />
+              </SectionInMiddle>
+            )
+          })}
       </Wrapper>
     </>
   )
