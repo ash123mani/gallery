@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import FsLightbox from 'fslightbox-react'
 import { chunk, sum } from 'lodash'
 
@@ -33,7 +33,7 @@ const GalleryGrid = ({ title, images, itemsPerRow: itemsPerRowByBreakpoints }) =
 
         return (
           <div onClick={() => openLightbox(i)} key={image.id} width={widthArr} css={imageBoxStyles}>
-            <Img onClick={() => openLightbox(i)} fluid={image.thumbnail} title={image.title} />
+            <GatsbyImage onClick={() => openLightbox(i)} fluid={image.thumbnail} title={image.title} />
           </div>
         )
       })}

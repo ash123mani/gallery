@@ -58,13 +58,14 @@ const PostSection = styled.section`
 
 const Blogs = ({ data }) => {
   const post = data.contentfulBlogPosts
+  const bodyJson = JSON.parse(post.body.raw)
 
   return (
     <>
       <SEO
         title={post.seoTitle}
         description={post.seoDescription}
-        image={post.heroImage.fluid.src}
+        image={post.heroImage.gatsbyImageData.images.fallback.src}
       />
       <Wrapper>
         <HeadingContainer>
@@ -82,7 +83,7 @@ const Blogs = ({ data }) => {
           </Article>
         </HeadingContainer>
         <PostSection id="bottom" className="post">
-          {documentToReactComponents(post.body.json, options)}
+          {documentToReactComponents(bodyJson, options)}
         </PostSection>
         {/* <Divider /> */}
         <div id="gitalk-container"></div>
@@ -115,21 +116,14 @@ export const query = graphql`
       tags
       heroImage {
         title
-        fluid(maxWidth: 1600, quality: 50) {
-          ...GatsbyContentfulFluid_withWebp
-          src
-        }
-        ogimg: fluid(maxWidth: 900, quality: 50) {
-          ...GatsbyContentfulFluid_withWebp
-          src
-        }
+        gatsbyImageData(quality: 50, width: 1600, layout: CONSTRAINED)
       }
       body {
-        json
+        raw
       }
       excerpt
-      seoDescription
       seoTitle
+      seoDescription
     }
   }
 `

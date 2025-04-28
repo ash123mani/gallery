@@ -64,22 +64,20 @@ const BlogPage = ({ data }) => {
 
 export const query = graphql`
   query Blogs {
-    allContentfulBlogPosts(sort: { fields: [publishedDate], order: DESC }) {
+    allContentfulBlogPosts(sort: { publishedDate: DESC }) {
       edges {
         node {
           id
           slug
           homepage
           body {
-            json
+            raw
           }
           publishedDate(formatString: "d/M/YYYY")
           tags
           heroImage {
             title
-            fluid(quality: 65, maxHeight: 200) {
-              ...GatsbyContentfulFluid_withWebp
-            }
+            gatsbyImageData(quality: 65, height: 200, layout: CONSTRAINED)
           }
           excerpt
         }

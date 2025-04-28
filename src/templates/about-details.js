@@ -16,28 +16,31 @@ const AboutDeatils = ({ data }) => {
     seoTitle,
   } = data
 
+  const mainHeadingJson = JSON.parse(mainHeading.raw)
+
   return (
     <>
       <SEO title={seoTitle} />
       <Wrapper>
-        <SectionInMiddle>{documentToReactComponents(mainHeading.json, options)}</SectionInMiddle>
+        <SectionInMiddle>{documentToReactComponents(mainHeadingJson, options)}</SectionInMiddle>
         {Array.isArray(infoCards) &&
           infoCards.map((exp, index) => {
             const {
-              info: { json: workExpRichJson },
+              info,
               imageSrc,
               id,
               knowMoreText,
               cardIdUsedForNavigation,
             } = exp
 
+            const richTextJson = JSON.parse(info.raw)
             const direction = index % 2 === 0 ? 'row' : 'reverse'
-            const fImage = (imageSrc || [])[0]
+            
             return (
               <SectionInMiddle key={id} id={cardIdUsedForNavigation}>
                 <InfoCard
-                  richTextJson={workExpRichJson}
-                  imageSrc={fImage}
+                  richTextJson={richTextJson}
+                  imageSrc={imageSrc}
                   knowMoreText={knowMoreText}
                   direction={direction}
                   showRedirect={false}
@@ -54,21 +57,25 @@ export const aboutDetails = graphql`
   query($slug: String!) {
     contentfulAboutDetails(slug: { eq: $slug }) {
       mainHeading {
-        json
+        raw
       }
       infoCards {
         id
         info {
-          json
+          raw
         }
         imageSrc {
           title
           description
-          fluid(maxWidth: 400, maxHeight: 320) {
-            ...GatsbyContentfulFluid_withWebp
-            ...GatsbyContentfulFluid_tracedSVG
-          }
+          gatsbyImageData(
+            quality: 90
+            layout: CONSTRAINED
+            placeholder: BLURRED
+            width: 800
+            formats: [AUTO, WEBP, AVIF]
+          )
         }
+        knowMoreText
         cardIdUsedForNavigation
       }
     }

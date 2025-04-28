@@ -25,33 +25,32 @@ const Contact = ({ data }) => {
     contentfulAbout: { mySummary, workExperience, experienceSummary },
     seoTitle,
   } = data
-  const { title: exTitle, items } = experienceSummary
+
+  const mySummaryJson = JSON.parse(mySummary.raw)
 
   return (
     <>
       <SEO title={seoTitle} />
       <Wrapper {...scrollRestoration}>
-        <SectionInMiddle>{documentToReactComponents(mySummary.json, options)}</SectionInMiddle>
+        <SectionInMiddle>{documentToReactComponents(mySummaryJson, options)}</SectionInMiddle>
         <SectionInMiddle id="tools-and-technologies">
-          <StyledTitle as="h2">{exTitle}</StyledTitle>
-          <AllBadges>
-            {items.map(({ title, tags }) => {
-              return (
-                <BadgeRow key={title}>
-                  <TechTitle>{title}</TechTitle>
-                  <BadgesContainer>
-                    {tags.map(tag => (
-                      <Badge key={tag}>{tag}</Badge>
-                    ))}
-                  </BadgesContainer>
-                </BadgeRow>
-              )
-            })}
-          </AllBadges>
+          {experienceSummary && (
+            <>
+              <StyledTitle as="h2">{experienceSummary.title}</StyledTitle>
+              <AllBadges>
+                {experienceSummary.items.map(({ title }) => (
+                  <BadgeRow key={title}>
+                    <TechTitle>{title}</TechTitle>
+                    <BadgesContainer />
+                  </BadgeRow>
+                ))}
+              </AllBadges>
+            </>
+          )}
         </SectionInMiddle>
         {workExperience.map((exp, index) => {
           const {
-            info: { json: workExpRichJson },
+            info,
             imageSrc,
             id,
             redirectUrl,
@@ -59,13 +58,13 @@ const Contact = ({ data }) => {
             cardIdUsedForNavigation,
           } = exp
 
-          const fImage = (imageSrc || [])[0]
+          const workExpRichJson = JSON.parse(info.raw)
           const direction = index % 2 === 0 ? 'row' : 'reverse'
           return (
             <SectionInMiddle key={id} id={cardIdUsedForNavigation}>
               <InfoCard
                 richTextJson={workExpRichJson}
-                imageSrc={fImage}
+                imageSrc={imageSrc}
                 redirectUrl={`/about${redirectUrl}`}
                 knowMoreText={knowMoreText}
                 direction={direction}
@@ -84,27 +83,23 @@ export const query = graphql`
     contentfulAbout {
       seoTitle
       mySummary {
-        json
+        raw
       }
       experienceSummary {
         title
         items {
           title
-          tags
         }
       }
       workExperience {
         id
         info {
-          json
+          raw
         }
         imageSrc {
           title
           description
-          fluid(maxWidth: 320, quality: 100) {
-            ...GatsbyContentfulFluid
-            ...GatsbyContentfulFluid_tracedSVG
-          }
+          gatsbyImageData(quality: 65, layout: CONSTRAINED)
         }
         redirectUrl
         knowMoreText

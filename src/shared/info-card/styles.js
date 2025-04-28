@@ -20,22 +20,41 @@ const RichInfo = styled.div`
 
 const ImageContainer = styled.div`
   flex: 1;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 
   & .gatsby-image-wrapper {
-    height: 320px !important;
+    width: 100%;
+    height: 100%;
+    max-height: 320px;
+    display: block !important;
 
-    & img {
-      object-fit: fill !important;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover !important;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &:hover img {
+      transform: scale(1.05);
     }
   }
 
   @media only screen and (max-width: 768px) {
+    min-height: 200px;
+    margin-bottom: 2rem;
+
     & .gatsby-image-wrapper {
-      height: 140px !important;
-      margin-bottom: 2rem;
+      max-height: 200px;
     }
   }
 `
+
 const knowMoreCss = css`
   /* text-decoration: none; */
   /* border: 1px solid var(--border-color); */
@@ -46,6 +65,7 @@ const knowMoreCss = css`
     color: initial;
   }
 `
+
 const KnowMoreFirst = styled(Link)`
   ${knowMoreCss};
 

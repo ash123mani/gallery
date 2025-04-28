@@ -1,7 +1,6 @@
 import React from 'react'
 import { object, string, oneOf, bool } from 'prop-types'
-import Img from 'gatsby-image'
-// import Img from 'gatsby-image/withIEPolyfill'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 import options from '../../components/blogElements/BlogElements'
@@ -16,16 +15,24 @@ const InfoCard = ({
   direction,
   showRedirect,
 }) => {
-  const { fluid, title } = imageSrc
+  const image = imageSrc ? getImage(imageSrc) : null
+
   return (
     <Container direction={direction}>
       <RichInfo>
         {documentToReactComponents(richTextJson, options)}
         {showRedirect && <KnowMoreFirst to={redirectUrl}>{knowMoreText}</KnowMoreFirst>}
       </RichInfo>
-      {(!!fluid || !!redirectUrl) && (
+      {(!!image || !!redirectUrl) && (
         <ImageContainer>
-          {fluid && <Img fluid={fluid} title={title} alt={title} objectFit="contain" />}
+          {image && (
+            <GatsbyImage
+              image={image}
+              alt={imageSrc?.title || 'Content image'}
+              loading="eager"
+              formats={['auto', 'webp', 'avif']}
+            />
+          )}
           {showRedirect && <KnowMoreSecond to={redirectUrl}>{knowMoreText}</KnowMoreSecond>}
         </ImageContainer>
       )}
@@ -38,7 +45,7 @@ InfoCard.propTypes = {
   imageSrc: object,
   knowMoreText: string,
   redirectUrl: string,
-  direction: oneOf[('reverse', 'row')],
+  direction: oneOf(['reverse', 'row']),
   showRedirect: bool,
 }
 
@@ -46,8 +53,8 @@ InfoCard.defaultProps = {
   knowMoreText: 'Know More ->',
   redirectUrl: '',
   direction: 'row',
-  imageSrc: {},
-  bool: true,
+  imageSrc: null,
+  showRedirect: true,
 }
 
 export default InfoCard

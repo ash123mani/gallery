@@ -16,6 +16,7 @@ module.exports = {
         path: `${__dirname}/src/static`,
       },
     },
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -39,17 +40,19 @@ module.exports = {
             options: {
               maxWidth: 960,
               linkImagesToOriginal: false,
+              withWebp: true,
+              quality: 80,
             },
           },
           {
             resolve: 'gatsby-remark-images-grid',
           },
-
           {
             resolve: 'gatsby-remark-prismjs',
             options: {
               classPrefix: 'language-',
               showLineNumbers: true,
+              noInlineHighlight: false,
             },
           },
           {
@@ -73,18 +76,16 @@ module.exports = {
             options: {
               maxWidth: 960,
               linkImagesToOriginal: false,
+              withWebp: true,
+              quality: 80,
             },
           },
           {
             resolve: 'gatsby-remark-emojis',
             options: {
-              // Deactivate the plugin globally (default: true)
               active: true,
-              // Add a custom css class
               class: 'emoji-icon',
-              // Select the size (available size: 16, 24, 32, 64)
               size: 64,
-              // Add custom styles
               styles: {
                 display: 'inline',
                 margin: '0',
@@ -100,17 +101,19 @@ module.exports = {
             options: {
               maxWidth: 960,
               linkImagesToOriginal: false,
+              withWebp: true,
+              quality: 80,
             },
           },
           {
             resolve: 'gatsby-remark-images-grid',
           },
-
           {
             resolve: 'gatsby-remark-prismjs',
             options: {
               classPrefix: 'language-',
               showLineNumbers: true,
+              noInlineHighlight: false,
             },
           },
           {
@@ -136,21 +139,18 @@ module.exports = {
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        downloadLocal: true,
       },
     },
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         displayName: true,
+        pure: true,
       },
     },
   ],
-  flags: {
-    DEV_SSR: true,
-    FAST_DEV: true, // Enable all experiments aimed at improving develop server start time
-    PRESERVE_WEBPACK_CACHE: true, // Don't delete webpack's cache when changing gatsby-node.js & gatsby-config.js files.
-    FAST_REFRESH: true,
-    PARALLEL_SOURCING: true, // Run all source plugins at the same time instead of serially. For sites with multiple source plugins, this can speedup sourcing and transforming considerably.
-    PRESERVE_FILE_DOWNLOAD_CACHE: true,
-  },
+  trailingSlash: 'never',
+  graphqlTypegen: true,
+  jsxRuntime: 'automatic',
 }
